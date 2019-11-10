@@ -1,0 +1,8 @@
+query HomeBeweries {
+    allBreweries {
+        name
+        address
+        state
+        county
+    }
+}
