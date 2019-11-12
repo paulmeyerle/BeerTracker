@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		54AE835123773B9600AD704C /* HomeView.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 54AF3C032377333400357797 /* HomeView.graphql */; };
 		54AE835323773BA900AD704C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835223773BA900AD704C /* API.swift */; };
-		54AE835623773EE600AD704C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835523773EE600AD704C /* Service.swift */; };
+		54AE835623773EE600AD704C /* ApolloServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835523773EE600AD704C /* ApolloServiceProvider.swift */; };
 		54AE8358237899B600AD704C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8357237899B600AD704C /* HomeViewModel.swift */; };
 		54AE835B2378ACF800AD704C /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835A2378ACF800AD704C /* HomeCellViewModel.swift */; };
 		54AE835D2378AD5C00AD704C /* HomeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835C2378AD5C00AD704C /* HomeCellView.swift */; };
+		54AE835F237ADE2500AD704C /* HomeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835E237ADE2500AD704C /* HomeProvider.swift */; };
+		54AE8361237ADE5B00AD704C /* ApolloServiceProvider+HomeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8360237ADE5B00AD704C /* ApolloServiceProvider+HomeProvider.swift */; };
+		54AE8363237ADE7B00AD704C /* ApolloClient+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8362237ADE7B00AD704C /* ApolloClient+Combine.swift */; };
 		54AF3BFC2377321800357797 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3BFB2377321800357797 /* HomeView.swift */; };
 		54AF3BFE2377324100357797 /* HomeTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3BFD2377324100357797 /* HomeTabItem.swift */; };
 		54AF3C002377325900357797 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3BFF2377325900357797 /* Search.swift */; };
@@ -52,10 +55,13 @@
 		3CC690BABE57B0D32BB92BC1 /* Pods_BeerTracker_BeerTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerTracker_BeerTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D2A0B76279402A2F052D76B /* Pods-BeerTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerTracker.release.xcconfig"; path = "Target Support Files/Pods-BeerTracker/Pods-BeerTracker.release.xcconfig"; sourceTree = "<group>"; };
 		54AE835223773BA900AD704C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		54AE835523773EE600AD704C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		54AE835523773EE600AD704C /* ApolloServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloServiceProvider.swift; sourceTree = "<group>"; };
 		54AE8357237899B600AD704C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		54AE835A2378ACF800AD704C /* HomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
 		54AE835C2378AD5C00AD704C /* HomeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellView.swift; sourceTree = "<group>"; };
+		54AE835E237ADE2500AD704C /* HomeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProvider.swift; sourceTree = "<group>"; };
+		54AE8360237ADE5B00AD704C /* ApolloServiceProvider+HomeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloServiceProvider+HomeProvider.swift"; sourceTree = "<group>"; };
+		54AE8362237ADE7B00AD704C /* ApolloClient+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloClient+Combine.swift"; sourceTree = "<group>"; };
 		54AF3BFB2377321800357797 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		54AF3BFD2377324100357797 /* HomeTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabItem.swift; sourceTree = "<group>"; };
 		54AF3BFF2377325900357797 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -114,7 +120,10 @@
 		54AE835423773C3200AD704C /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				54AE835523773EE600AD704C /* Service.swift */,
+				54AE8362237ADE7B00AD704C /* ApolloClient+Combine.swift */,
+				54AE835523773EE600AD704C /* ApolloServiceProvider.swift */,
+				54AE8360237ADE5B00AD704C /* ApolloServiceProvider+HomeProvider.swift */,
+				54AE835E237ADE2500AD704C /* HomeProvider.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -512,9 +521,12 @@
 				54AE8358237899B600AD704C /* HomeViewModel.swift in Sources */,
 				54AF3C002377325900357797 /* Search.swift in Sources */,
 				54AF3C022377326B00357797 /* SearchTabItem.swift in Sources */,
-				54AE835623773EE600AD704C /* Service.swift in Sources */,
+				54AE835F237ADE2500AD704C /* HomeProvider.swift in Sources */,
+				54AE835623773EE600AD704C /* ApolloServiceProvider.swift in Sources */,
+				54AE8361237ADE5B00AD704C /* ApolloServiceProvider+HomeProvider.swift in Sources */,
 				54AF3BFE2377324100357797 /* HomeTabItem.swift in Sources */,
 				54AE835D2378AD5C00AD704C /* HomeCellView.swift in Sources */,
+				54AE8363237ADE7B00AD704C /* ApolloClient+Combine.swift in Sources */,
 				54AE835323773BA900AD704C /* API.swift in Sources */,
 				54F6AEE723772AB100604574 /* ContentView.swift in Sources */,
 			);

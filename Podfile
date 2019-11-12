@@ -7,6 +7,7 @@ target 'BeerTracker' do
 
   # Pods for BeerTracker
   pod 'Apollo', '~> 0.19.0'
+  pod 'SDWebImageSwiftUI'
 
   target 'BeerTrackerTests' do
     inherit! :search_paths

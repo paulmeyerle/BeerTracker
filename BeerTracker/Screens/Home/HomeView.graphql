@@ -1,5 +1,6 @@
 query HomeBeweries {
     allBreweries {
+        imageURL
         name
         address
         state

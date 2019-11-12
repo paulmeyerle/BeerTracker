@@ -10,6 +10,7 @@ public final class HomeBeweriesQuery: GraphQLQuery {
     query HomeBeweries {
       allBreweries {
         __typename
+        imageURL
         name
         address
         state
@@ -54,6 +55,7 @@ public final class HomeBeweriesQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("imageURL", type: .scalar(String.self)),
         GraphQLField("name", type: .scalar(String.self)),
         GraphQLField("address", type: .scalar(String.self)),
         GraphQLField("state", type: .scalar(String.self)),
@@ -66,8 +68,8 @@ public final class HomeBeweriesQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(name: String? = nil, address: String? = nil, state: String? = nil, county: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Brewery", "name": name, "address": address, "state": state, "county": county])
+      public init(imageUrl: String? = nil, name: String? = nil, address: String? = nil, state: String? = nil, county: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Brewery", "imageURL": imageUrl, "name": name, "address": address, "state": state, "county": county])
       }
 
       public var __typename: String {
@@ -76,6 +78,15 @@ public final class HomeBeweriesQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var imageUrl: String? {
+        get {
+          return resultMap["imageURL"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "imageURL")
         }
       }
 

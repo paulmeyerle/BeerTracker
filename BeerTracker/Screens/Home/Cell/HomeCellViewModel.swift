@@ -11,13 +11,22 @@ import Foundation
 final class HomeCellViewModel: Identifiable, ObservableObject {
     let id: UUID
     
+    @Published var imageURL: URL
     @Published var nameText: String = ""
     @Published var locationText: String = ""
     
-    init(brewery: HomeBeweriesQuery.Data.AllBrewery) {
-        id = UUID()
-        nameText = brewery.name ?? ""
-        locationText = brewery.location
+    convenience init(brewery: HomeBeweriesQuery.Data.AllBrewery) {
+        self.init(id: UUID(),
+                  nameText: brewery.name ?? "",
+                  locationText: brewery.location,
+                  imageURL: URL(string: brewery.imageUrl ?? "")!)
+    }
+    
+    init(id: UUID, nameText: String, locationText: String, imageURL: URL) {
+        self.id = id
+        self.nameText = nameText
+        self.locationText = locationText
+        self.imageURL = imageURL
     }
 }
 
