@@ -1,0 +1,8 @@
+# Project file
+BeerTracker.xcworkspace/
+
+# Cocoapods
+Pods/
+
+# Faker schema
+schema.faker.graphql
