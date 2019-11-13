@@ -9,12 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    // TODO: Need injection pattern for view models & service providers
     var body: some View {
         TabView {
-            HomeView(viewModel: HomeViewModel(homeProvider: ApolloServiceProvider()))
-                .tabItem { HomeTabItem() }
+            // List of rated beers
+            MyRatingsView(viewModel: MyRatingsViewModel(provider: ApolloServiceProvider()))
+                .tabItem { MyRatingsTabItem() }
             
-            Search()
+            // Search for beers to rate.
+            SearchView(viewModel: SearchViewModel(provider: ApolloServiceProvider()))
                 .tabItem { SearchTabItem() }
         }
     }

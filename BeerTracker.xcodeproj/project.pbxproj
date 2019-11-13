@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		54AE835123773B9600AD704C /* HomeView.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 54AF3C032377333400357797 /* HomeView.graphql */; };
+		54AE835123773B9600AD704C /* MyRatings.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 54AF3C032377333400357797 /* MyRatings.graphql */; };
 		54AE835323773BA900AD704C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835223773BA900AD704C /* API.swift */; };
 		54AE835623773EE600AD704C /* ApolloServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835523773EE600AD704C /* ApolloServiceProvider.swift */; };
-		54AE8358237899B600AD704C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8357237899B600AD704C /* HomeViewModel.swift */; };
-		54AE835B2378ACF800AD704C /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835A2378ACF800AD704C /* HomeCellViewModel.swift */; };
-		54AE835D2378AD5C00AD704C /* HomeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835C2378AD5C00AD704C /* HomeCellView.swift */; };
-		54AE835F237ADE2500AD704C /* HomeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835E237ADE2500AD704C /* HomeProvider.swift */; };
-		54AE8361237ADE5B00AD704C /* ApolloServiceProvider+HomeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8360237ADE5B00AD704C /* ApolloServiceProvider+HomeProvider.swift */; };
+		54AE8358237899B600AD704C /* MyRatingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8357237899B600AD704C /* MyRatingsViewModel.swift */; };
+		54AE835B2378ACF800AD704C /* MyRatingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835A2378ACF800AD704C /* MyRatingsCellViewModel.swift */; };
+		54AE835D2378AD5C00AD704C /* MyRatingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835C2378AD5C00AD704C /* MyRatingsCellView.swift */; };
+		54AE835F237ADE2500AD704C /* MyRatingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835E237ADE2500AD704C /* MyRatingsProvider.swift */; };
+		54AE8361237ADE5B00AD704C /* ApolloServiceProvider+MyRatingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8360237ADE5B00AD704C /* ApolloServiceProvider+MyRatingsProvider.swift */; };
 		54AE8363237ADE7B00AD704C /* ApolloClient+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8362237ADE7B00AD704C /* ApolloClient+Combine.swift */; };
-		54AF3BFC2377321800357797 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3BFB2377321800357797 /* HomeView.swift */; };
-		54AF3BFE2377324100357797 /* HomeTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3BFD2377324100357797 /* HomeTabItem.swift */; };
-		54AF3C002377325900357797 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3BFF2377325900357797 /* Search.swift */; };
+		54AE8369237B8B8200AD704C /* MyRatingsTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8368237B8B8200AD704C /* MyRatingsTabItem.swift */; };
+		54AE836B237C30C200AD704C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE836A237C30C200AD704C /* SearchViewModel.swift */; };
+		54AE836F237C317000AD704C /* SearchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE836E237C317000AD704C /* SearchProvider.swift */; };
+		54AE8371237C31C400AD704C /* Search.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 54AE8370237C31C400AD704C /* Search.graphql */; };
+		54AE8373237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8372237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift */; };
+		54AF3BFC2377321800357797 /* MyRatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3BFB2377321800357797 /* MyRatingsView.swift */; };
+		54AF3C002377325900357797 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3BFF2377325900357797 /* SearchView.swift */; };
 		54AF3C022377326B00357797 /* SearchTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3C012377326B00357797 /* SearchTabItem.swift */; };
 		54F6AEE323772AB100604574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6AEE223772AB100604574 /* AppDelegate.swift */; };
 		54F6AEE523772AB100604574 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6AEE423772AB100604574 /* SceneDelegate.swift */; };
@@ -56,17 +60,22 @@
 		4D2A0B76279402A2F052D76B /* Pods-BeerTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerTracker.release.xcconfig"; path = "Target Support Files/Pods-BeerTracker/Pods-BeerTracker.release.xcconfig"; sourceTree = "<group>"; };
 		54AE835223773BA900AD704C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		54AE835523773EE600AD704C /* ApolloServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloServiceProvider.swift; sourceTree = "<group>"; };
-		54AE8357237899B600AD704C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		54AE835A2378ACF800AD704C /* HomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
-		54AE835C2378AD5C00AD704C /* HomeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellView.swift; sourceTree = "<group>"; };
-		54AE835E237ADE2500AD704C /* HomeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProvider.swift; sourceTree = "<group>"; };
-		54AE8360237ADE5B00AD704C /* ApolloServiceProvider+HomeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloServiceProvider+HomeProvider.swift"; sourceTree = "<group>"; };
+		54AE8357237899B600AD704C /* MyRatingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsViewModel.swift; sourceTree = "<group>"; };
+		54AE835A2378ACF800AD704C /* MyRatingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsCellViewModel.swift; sourceTree = "<group>"; };
+		54AE835C2378AD5C00AD704C /* MyRatingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsCellView.swift; sourceTree = "<group>"; };
+		54AE835E237ADE2500AD704C /* MyRatingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsProvider.swift; sourceTree = "<group>"; };
+		54AE8360237ADE5B00AD704C /* ApolloServiceProvider+MyRatingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloServiceProvider+MyRatingsProvider.swift"; sourceTree = "<group>"; };
 		54AE8362237ADE7B00AD704C /* ApolloClient+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloClient+Combine.swift"; sourceTree = "<group>"; };
-		54AF3BFB2377321800357797 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		54AF3BFD2377324100357797 /* HomeTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabItem.swift; sourceTree = "<group>"; };
-		54AF3BFF2377325900357797 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		54AE8368237B8B8200AD704C /* MyRatingsTabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRatingsTabItem.swift; sourceTree = "<group>"; };
+		54AE836A237C30C200AD704C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		54AE836E237C317000AD704C /* SearchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProvider.swift; sourceTree = "<group>"; };
+		54AE8370237C31C400AD704C /* Search.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Search.graphql; sourceTree = "<group>"; };
+		54AE8372237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloServiceProvider+SearchProvider.swift"; sourceTree = "<group>"; };
+		54AE8374237C3AE900AD704C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		54AF3BFB2377321800357797 /* MyRatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsView.swift; sourceTree = "<group>"; };
+		54AF3BFF2377325900357797 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		54AF3C012377326B00357797 /* SearchTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabItem.swift; sourceTree = "<group>"; };
-		54AF3C032377333400357797 /* HomeView.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = HomeView.graphql; sourceTree = "<group>"; };
+		54AF3C032377333400357797 /* MyRatings.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyRatings.graphql; sourceTree = "<group>"; };
 		54F6AEDF23772AB100604574 /* BeerTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F6AEE223772AB100604574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54F6AEE423772AB100604574 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,8 +131,8 @@
 			children = (
 				54AE8362237ADE7B00AD704C /* ApolloClient+Combine.swift */,
 				54AE835523773EE600AD704C /* ApolloServiceProvider.swift */,
-				54AE8360237ADE5B00AD704C /* ApolloServiceProvider+HomeProvider.swift */,
-				54AE835E237ADE2500AD704C /* HomeProvider.swift */,
+				54AE836C237C314500AD704C /* MyRatings */,
+				54AE836D237C315000AD704C /* Search */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -131,38 +140,58 @@
 		54AE83592378ACD700AD704C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				54AE835A2378ACF800AD704C /* HomeCellViewModel.swift */,
-				54AE835C2378AD5C00AD704C /* HomeCellView.swift */,
+				54AE835A2378ACF800AD704C /* MyRatingsCellViewModel.swift */,
+				54AE835C2378AD5C00AD704C /* MyRatingsCellView.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		54AE836C237C314500AD704C /* MyRatings */ = {
+			isa = PBXGroup;
+			children = (
+				54AF3C032377333400357797 /* MyRatings.graphql */,
+				54AE8360237ADE5B00AD704C /* ApolloServiceProvider+MyRatingsProvider.swift */,
+				54AE835E237ADE2500AD704C /* MyRatingsProvider.swift */,
+			);
+			path = MyRatings;
+			sourceTree = "<group>";
+		};
+		54AE836D237C315000AD704C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				54AE8370237C31C400AD704C /* Search.graphql */,
+				54AE8372237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift */,
+				54AE836E237C317000AD704C /* SearchProvider.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		54AF3BF8237731D400357797 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				54AF3BFA237731E300357797 /* Search */,
-				54AF3BF9237731DC00357797 /* Home */,
+				54AF3BF9237731DC00357797 /* MyRatings */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		54AF3BF9237731DC00357797 /* Home */ = {
+		54AF3BF9237731DC00357797 /* MyRatings */ = {
 			isa = PBXGroup;
 			children = (
+				54AF3BFB2377321800357797 /* MyRatingsView.swift */,
+				54AE8357237899B600AD704C /* MyRatingsViewModel.swift */,
+				54AE8368237B8B8200AD704C /* MyRatingsTabItem.swift */,
 				54AE83592378ACD700AD704C /* Cell */,
-				54AF3C032377333400357797 /* HomeView.graphql */,
-				54AF3BFB2377321800357797 /* HomeView.swift */,
-				54AF3BFD2377324100357797 /* HomeTabItem.swift */,
-				54AE8357237899B600AD704C /* HomeViewModel.swift */,
 			);
-			path = Home;
+			path = MyRatings;
 			sourceTree = "<group>";
 		};
 		54AF3BFA237731E300357797 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				54AF3BFF2377325900357797 /* Search.swift */,
+				54AF3BFF2377325900357797 /* SearchView.swift */,
 				54AF3C012377326B00357797 /* SearchTabItem.swift */,
+				54AE836A237C30C200AD704C /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -192,16 +221,17 @@
 		54F6AEE123772AB100604574 /* BeerTracker */ = {
 			isa = PBXGroup;
 			children = (
-				54AE835423773C3200AD704C /* Service */,
+				54AE8374237C3AE900AD704C /* README.md */,
+				54F6AEF023772AB400604574 /* Info.plist */,
 				54AE835223773BA900AD704C /* API.swift */,
-				54AF3BF8237731D400357797 /* Screens */,
 				54F6AEE223772AB100604574 /* AppDelegate.swift */,
-				54F6AEE423772AB100604574 /* SceneDelegate.swift */,
 				54F6AEE623772AB100604574 /* ContentView.swift */,
+				54F6AEE423772AB100604574 /* SceneDelegate.swift */,
 				54F6AEE823772AB400604574 /* Assets.xcassets */,
 				54F6AEED23772AB400604574 /* LaunchScreen.storyboard */,
-				54F6AEF023772AB400604574 /* Info.plist */,
 				54F6AEEA23772AB400604574 /* Preview Content */,
+				54AF3BF8237731D400357797 /* Screens */,
+				54AE835423773C3200AD704C /* Service */,
 			);
 			path = BeerTracker;
 			sourceTree = "<group>";
@@ -366,8 +396,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				54F6AEEF23772AB400604574 /* LaunchScreen.storyboard in Resources */,
+				54AE8371237C31C400AD704C /* Search.graphql in Resources */,
 				54F6AEEC23772AB400604574 /* Preview Assets.xcassets in Resources */,
-				54AE835123773B9600AD704C /* HomeView.graphql in Resources */,
+				54AE835123773B9600AD704C /* MyRatings.graphql in Resources */,
 				54F6AEE923772AB400604574 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,16 +547,19 @@
 			files = (
 				54F6AEE323772AB100604574 /* AppDelegate.swift in Sources */,
 				54F6AEE523772AB100604574 /* SceneDelegate.swift in Sources */,
-				54AF3BFC2377321800357797 /* HomeView.swift in Sources */,
-				54AE835B2378ACF800AD704C /* HomeCellViewModel.swift in Sources */,
-				54AE8358237899B600AD704C /* HomeViewModel.swift in Sources */,
-				54AF3C002377325900357797 /* Search.swift in Sources */,
+				54AE836B237C30C200AD704C /* SearchViewModel.swift in Sources */,
+				54AF3BFC2377321800357797 /* MyRatingsView.swift in Sources */,
+				54AE8369237B8B8200AD704C /* MyRatingsTabItem.swift in Sources */,
+				54AE835B2378ACF800AD704C /* MyRatingsCellViewModel.swift in Sources */,
+				54AE8358237899B600AD704C /* MyRatingsViewModel.swift in Sources */,
+				54AF3C002377325900357797 /* SearchView.swift in Sources */,
+				54AE836F237C317000AD704C /* SearchProvider.swift in Sources */,
 				54AF3C022377326B00357797 /* SearchTabItem.swift in Sources */,
-				54AE835F237ADE2500AD704C /* HomeProvider.swift in Sources */,
+				54AE835F237ADE2500AD704C /* MyRatingsProvider.swift in Sources */,
 				54AE835623773EE600AD704C /* ApolloServiceProvider.swift in Sources */,
-				54AE8361237ADE5B00AD704C /* ApolloServiceProvider+HomeProvider.swift in Sources */,
-				54AF3BFE2377324100357797 /* HomeTabItem.swift in Sources */,
-				54AE835D2378AD5C00AD704C /* HomeCellView.swift in Sources */,
+				54AE8373237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift in Sources */,
+				54AE8361237ADE5B00AD704C /* ApolloServiceProvider+MyRatingsProvider.swift in Sources */,
+				54AE835D2378AD5C00AD704C /* MyRatingsCellView.swift in Sources */,
 				54AE8363237ADE7B00AD704C /* ApolloClient+Combine.swift in Sources */,
 				54AE835323773BA900AD704C /* API.swift in Sources */,
 				54F6AEE723772AB100604574 /* ContentView.swift in Sources */,

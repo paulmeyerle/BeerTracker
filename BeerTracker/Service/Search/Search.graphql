@@ -1,0 +1,17 @@
+query SearchBeers($query: String!) {
+    searchBeers(name: $query) {
+        rating
+        imageURL
+        name
+        abv
+        ibu
+        type
+        brewery {
+          imageURL
+          name
+          address
+          state
+          county
+        }
+      }
+}

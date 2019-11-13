@@ -1,0 +1,20 @@
+query MyRatings {
+    myRatings {
+      rating
+      beer {
+        rating
+        imageURL
+        name
+        abv
+        ibu
+        type
+        brewery {
+          imageURL
+          name
+          address
+          state
+          county
+        }
+      }
+    }
+}

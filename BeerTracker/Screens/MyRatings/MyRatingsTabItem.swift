@@ -1,5 +1,5 @@
 //
-//  HomeTabItem.swift
+//  MyRatingsTabItem.swift
 //  BeerTracker
 //
 //  Created by Paul Meyerle on 11/9/19.
@@ -8,17 +8,17 @@
 
 import SwiftUI
 
-struct HomeTabItem: View {
+struct MyRatingsTabItem: View {
     var body: some View {
         VStack {
             Image(systemName: "arkit")
-            Text("Home")
+            Text("My Ratings")
         }
     }
 }
 
 struct HomeTabItem_Previews: PreviewProvider {
     static var previews: some View {
-        HomeTabItem()
+        MyRatingsTabItem()
     }
 }

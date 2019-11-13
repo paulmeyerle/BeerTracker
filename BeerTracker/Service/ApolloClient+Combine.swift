@@ -46,7 +46,7 @@ private final class CancelBox: Combine.Cancellable {
     }
 }
 
-final class ApolloPublisher<Output>: Publisher {
+private final class ApolloPublisher<Output>: Publisher {
     typealias Failure = Error
     
     private let callback: (AnySubscriber<Output, Failure>) -> Combine.Cancellable?

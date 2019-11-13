@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  MyRatingsViewModel.swift
 //  BeerTracker
 //
 //  Created by Paul Meyerle on 11/10/19.
@@ -9,8 +9,8 @@
 import Combine
 import Foundation
 
-final class HomeViewModel: ObservableObject {
-    private let homeProvider: HomeProvider
+final class MyRatingsViewModel: ObservableObject {
+    private let provider: MyRatingsProvider
     private var disposeBag = Set<AnyCancellable>()
     
     // MARK: Inputs
@@ -18,7 +18,7 @@ final class HomeViewModel: ObservableObject {
     let onReload = PassthroughSubject<Void, Never>()
     
     // MARK: Outputs
-    @Published var cellViewModels: [HomeCellViewModel] = []
+    @Published var cellViewModels: [MyRatingsCellViewModel] = []
     @Published var isLoading: Bool = false
     
     private lazy var fetchTriggerPublisher: AnyPublisher = {
@@ -30,9 +30,9 @@ final class HomeViewModel: ObservableObject {
     private lazy var responsePublisher: AnyPublisher = {
         fetchTriggerPublisher
             .map {
-                self.homeProvider.fetchHomeBreweries()
-                    .map { Result<HomeBeweriesQuery.Data, Error>.success($0) }
-                    .catch { Just(Result<HomeBeweriesQuery.Data, Error>.failure($0)) }
+                self.provider.fetchMyRatings()
+                    .map { Result<MyRatingsQuery.Data, Error>.success($0) }
+                    .catch { Just(Result<MyRatingsQuery.Data, Error>.failure($0)) }
                     .eraseToAnyPublisher()
             }
             .switchToLatest()
@@ -49,16 +49,16 @@ final class HomeViewModel: ObservableObject {
     
     private lazy var cellViewModelsPublisher: AnyPublisher = {
         responsePublisher
-            .compactMap({ (result) -> [HomeCellViewModel]? in
+            .compactMap({ (result) -> [MyRatingsCellViewModel]? in
                 guard case let .success(data) = result,
-                    let breweries = data.allBreweries else { return nil }
-                return breweries.map { HomeCellViewModel(brewery: $0) }
+                    let ratings = data.myRatings else { return nil }
+                return ratings.map { MyRatingsCellViewModel(rating: $0) }
             })
             .eraseToAnyPublisher()
     }()
     
-    init(homeProvider: HomeProvider) {
-        self.homeProvider = homeProvider
+    init(provider: MyRatingsProvider) {
+        self.provider = provider
             
         isLoadingPublisher
             .assign(to: \.isLoading, on: self)

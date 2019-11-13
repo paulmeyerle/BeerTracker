@@ -1,5 +1,5 @@
 //
-//  HomeProvider.swift
+//  MyRatingsProvider.swift
 //  BeerTracker
 //
 //  Created by Paul Meyerle on 11/12/19.
@@ -8,6 +8,6 @@
 
 import Combine
 
-protocol HomeProvider {
-    func fetchHomeBreweries() -> AnyPublisher<HomeBeweriesQuery.Data, Error>
+protocol MyRatingsProvider {
+    func fetchMyRatings() -> AnyPublisher<MyRatingsQuery.Data, Error>
 }

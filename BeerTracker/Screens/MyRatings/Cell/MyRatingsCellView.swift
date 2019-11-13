@@ -1,5 +1,5 @@
 //
-//  HomeCellView.swift
+//  MyRatingsCellView.swift
 //  BeerTracker
 //
 //  Created by Paul Meyerle on 11/10/19.
@@ -9,29 +9,44 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct HomeCellView: View {
+struct MyRatingsCellView: View {
     
-    @ObservedObject private var viewModel: HomeCellViewModel
+    @ObservedObject private var viewModel: MyRatingsCellViewModel
     
-    init(viewModel: HomeCellViewModel) {
+    init(viewModel: MyRatingsCellViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
-        HStack{
+        HStack(alignment: .center) {
             VStack {
                 WebImage(url: viewModel.imageURL)
+                    .placeholder {
+                        ZStack {
+                            Rectangle()
+                                .fill(Color(.lightGray))
+                            ActivityIndicator(.constant(true), style: .medium)
+                        }
+                    }
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)
+                    .cornerRadius(5)
             }
             .frame(width: 100, height: 100)
 
             VStack(alignment: .leading) {
                 Text(viewModel.nameText)
+                    .font(.headline)
+                Text(viewModel.breweryText)
+                      .font(.subheadline)
                 Text(viewModel.locationText)
+                    .font(.subheadline)
+                Text(viewModel.ratingText)
+                    .font(.subheadline)
             }
+            
         }
-
+        .padding()
     }
 }
 

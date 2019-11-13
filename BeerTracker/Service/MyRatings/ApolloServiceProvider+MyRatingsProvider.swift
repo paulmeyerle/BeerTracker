@@ -8,8 +8,8 @@
 
 import Combine
 
-extension ApolloServiceProvider: HomeProvider {
-    func fetchHomeBreweries() -> AnyPublisher<HomeBeweriesQuery.Data, Error> {
-        return client.fetch(query: HomeBeweriesQuery())
+extension ApolloServiceProvider: MyRatingsProvider {
+    func fetchMyRatings() -> AnyPublisher<MyRatingsQuery.Data, Error> {
+        return client.fetch(query: MyRatingsQuery())
     }
 }
