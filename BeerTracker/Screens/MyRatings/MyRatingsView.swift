@@ -19,7 +19,7 @@ struct MyRatingsView: View {
     
     var body: some View {
         List(viewModel.cellViewModels) { cellViewModel in
-            MyRatingsCellView(viewModel: cellViewModel)
+            MyRatingsItemView(viewModel: cellViewModel)
         }
     }
 }

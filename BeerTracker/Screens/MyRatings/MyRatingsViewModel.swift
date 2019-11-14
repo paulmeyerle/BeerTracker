@@ -18,7 +18,7 @@ final class MyRatingsViewModel: ObservableObject {
     let onReload = PassthroughSubject<Void, Never>()
     
     // MARK: Outputs
-    @Published var cellViewModels: [MyRatingsCellViewModel] = []
+    @Published var cellViewModels: [MyRatingsItemViewModel] = []
     @Published var isLoading: Bool = false
     
     private lazy var fetchTriggerPublisher: AnyPublisher = {
@@ -49,10 +49,10 @@ final class MyRatingsViewModel: ObservableObject {
     
     private lazy var cellViewModelsPublisher: AnyPublisher = {
         responsePublisher
-            .compactMap({ (result) -> [MyRatingsCellViewModel]? in
+            .compactMap({ (result) -> [MyRatingsItemViewModel]? in
                 guard case let .success(data) = result,
                     let ratings = data.myRatings else { return nil }
-                return ratings.map { MyRatingsCellViewModel(rating: $0) }
+                return ratings.compactMap { MyRatingsItemViewModel(rating: $0) }
             })
             .eraseToAnyPublisher()
     }()

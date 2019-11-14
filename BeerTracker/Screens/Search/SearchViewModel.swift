@@ -19,11 +19,12 @@ final class SearchViewModel: ObservableObject {
     @Published var searchQuery: String = ""
     
     // MARK: Outputs
-    @Published var resultViewModels: [String] = []
+    @Published var resultViewModels: [SearchResultViewModel] = []
     
     private lazy var fetchTriggerPublisher: AnyPublisher<String, Never> = {
         $searchQuery
             .debounce(for: .milliseconds(250), scheduler: globalDispatchQueue)
+            .filter { $0.count >= 3 }
             .eraseToAnyPublisher()
     }()
     
@@ -43,8 +44,11 @@ final class SearchViewModel: ObservableObject {
     
     private lazy var resultViewModelsPublisher: AnyPublisher = {
         searchResponsePublisher
-            .map { _ in ["one", "two", "three"] }
-            .print("mapping")
+            .compactMap({ (result) -> [SearchResultViewModel]? in
+                guard case let .success(data) = result,
+                    let results = data.searchBeers else { return nil }
+                return results.compactMap { SearchResultViewModel(result: $0) }
+            })
             .eraseToAnyPublisher()
     }()
     

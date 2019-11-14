@@ -1,5 +1,5 @@
 //
-//  MyRatingsCellView.swift
+//  MyRatingsItemView.swift
 //  BeerTracker
 //
 //  Created by Paul Meyerle on 11/10/19.
@@ -9,11 +9,11 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct MyRatingsCellView: View {
+struct MyRatingsItemView: View {
     
-    @ObservedObject private var viewModel: MyRatingsCellViewModel
+    @ObservedObject private var viewModel: MyRatingsItemViewModel
     
-    init(viewModel: MyRatingsCellViewModel) {
+    init(viewModel: MyRatingsItemViewModel) {
         self.viewModel = viewModel
     }
     

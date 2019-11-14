@@ -18,13 +18,12 @@ struct SearchView: View {
     
     var body: some View {
         VStack {
-            TextField("Search...", text: $viewModel.searchQuery)
+            SearchBar(text: $viewModel.searchQuery)
                 .padding()
             
-//            List(viewModel.resultViewModels) { model in
-//                Text(model)
-//            }
-            
+            List(viewModel.resultViewModels) { model in
+                SearchResultView(viewModel: model)
+            }
         }
     }
 }
