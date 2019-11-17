@@ -3,6 +3,7 @@
 Graphql-Faker schema:
 ```
 type Brewery {
+  id:String @fake(type:uuid)
   imageURL: String @fake(type:imageUrl, options:{randomizeImageUrl: true})
   name: String @fake(type:companyName)
   address: String @fake(type:streetAddress, options: { useFullAddress: true })
@@ -12,6 +13,7 @@ type Brewery {
 }
 
 type Beer {
+  id:String @fake(type:uuid)
   imageURL: String @fake(type:imageUrl, options:{randomizeImageUrl: true})
   name: String @fake(type: productName, locale:en_CA)
   abv: Float @fake(type:number, options:{ minNumber:3, maxNumber:20, precisionNumber:0.1})
@@ -22,6 +24,7 @@ type Beer {
 }
 
 type Rating {
+  id:String @fake(type:uuid)
   rating: Float @fake(type:number, options: { minNumber: 0, maxNumber: 5, precisionNumber:0.1 })
   beer: Beer!
 }
@@ -36,4 +39,13 @@ type Query {
 type Mutation {
   rateBeer(id: Int, rating: Float): Rating
 }
+```
+
+## Update GraphQL Schema
+```
+# ensure that apollo is installed globally
+npm install -g apollo
+
+# run the fastlane command to update the schema
+fastlane update_schema
 ```

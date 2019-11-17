@@ -12,18 +12,19 @@ import Foundation
 final class MyRatingsViewModel: ObservableObject {
     private let provider: MyRatingsProvider
     private var disposeBag = Set<AnyCancellable>()
+    private let onLoad = PassthroughSubject<Void, Never>()
     
     // MARK: Inputs
-    let onLoad = PassthroughSubject<Void, Never>()
-    let onReload = PassthroughSubject<Void, Never>()
+    func fetch() {
+        onLoad.send(())
+    }
     
     // MARK: Outputs
     @Published var cellViewModels: [MyRatingsItemViewModel] = []
     @Published var isLoading: Bool = false
     
     private lazy var fetchTriggerPublisher: AnyPublisher = {
-        Publishers.Merge(onLoad, onReload)
-            .prepend(())
+        onLoad
             .eraseToAnyPublisher()
     }()
     
@@ -42,18 +43,18 @@ final class MyRatingsViewModel: ObservableObject {
     
     private lazy var isLoadingPublisher: AnyPublisher = {
         Publishers.Merge(fetchTriggerPublisher.map { _ in true },
-                                responsePublisher.map { _ in false })
+                         responsePublisher.map { _ in false })
             .removeDuplicates()
             .eraseToAnyPublisher()
     }()
     
-    private lazy var cellViewModelsPublisher: AnyPublisher = {
+    private lazy var cellViewModelsPublisher: AnyPublisher<[MyRatingsItemViewModel], Never> = {
         responsePublisher
-            .compactMap({ (result) -> [MyRatingsItemViewModel]? in
+            .map { result -> [MyRatingsItemViewModel] in
                 guard case let .success(data) = result,
-                    let ratings = data.myRatings else { return nil }
+                    let ratings = data.myRatings else { return [] }
                 return ratings.compactMap { MyRatingsItemViewModel(rating: $0) }
-            })
+            }
             .eraseToAnyPublisher()
     }()
     

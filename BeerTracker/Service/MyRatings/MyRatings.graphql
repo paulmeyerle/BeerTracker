@@ -1,17 +1,12 @@
 query MyRatings {
     myRatings {
+      id
       rating
       beer {
-        rating
         imageURL
         name
-        abv
-        ibu
-        type
         brewery {
-          imageURL
           name
-          address
           state
           county
         }

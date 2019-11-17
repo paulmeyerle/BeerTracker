@@ -1,5 +1,6 @@
 query SearchBeers($query: String!) {
     searchBeers(name: $query) {
+        id
         imageURL
         name
         type

@@ -25,6 +25,7 @@ final class SearchViewModel: ObservableObject {
         $searchQuery
             .debounce(for: .milliseconds(250), scheduler: globalDispatchQueue)
             .filter { $0.count >= 3 }
+            .print()
             .eraseToAnyPublisher()
     }()
     
@@ -44,11 +45,12 @@ final class SearchViewModel: ObservableObject {
     
     private lazy var resultViewModelsPublisher: AnyPublisher = {
         searchResponsePublisher
-            .compactMap({ (result) -> [SearchResultViewModel]? in
+            .map({ (result) -> [SearchResultViewModel] in
                 guard case let .success(data) = result,
-                    let results = data.searchBeers else { return nil }
+                    let results = data.searchBeers else { return [] }
                 return results.compactMap { SearchResultViewModel(result: $0) }
             })
+        .print("resultViewModelsPublisher")
             .eraseToAnyPublisher()
     }()
     

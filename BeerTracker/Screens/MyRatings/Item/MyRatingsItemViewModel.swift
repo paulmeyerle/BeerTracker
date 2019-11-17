@@ -9,7 +9,7 @@
 import Foundation
 
 final class MyRatingsItemViewModel: Identifiable, ObservableObject {
-    let id: UUID
+    let id: String
     
     @Published var imageURL: URL
     @Published var nameText: String = ""
@@ -18,12 +18,13 @@ final class MyRatingsItemViewModel: Identifiable, ObservableObject {
     @Published var ratingText: String = ""
     
     convenience init?(rating: MyRatingsQuery.Data.MyRating) {
-        guard let beerName = rating.beer.name,
+        guard let id = rating.id,
+            let beerName = rating.beer.name,
             let breweryName = rating.beer.brewery.name,
             let urlString = rating.beer.imageUrl,
             let url = URL(string: urlString) else { return nil }
         
-        self.init(id: UUID(),
+        self.init(id: id,
                   nameText: beerName,
                   breweryText: breweryName,
                   locationText: rating.beer.brewery.location,
@@ -31,7 +32,7 @@ final class MyRatingsItemViewModel: Identifiable, ObservableObject {
                   ratingText: rating.ratingText)
     }
     
-    init(id: UUID,
+    init(id: String,
          nameText: String,
          breweryText: String,
          locationText: String,
@@ -43,6 +44,12 @@ final class MyRatingsItemViewModel: Identifiable, ObservableObject {
         self.locationText = locationText
         self.imageURL = imageURL
         self.ratingText = ratingText
+    }
+}
+
+extension MyRatingsItemViewModel: Equatable {
+    static func == (lhs: MyRatingsItemViewModel, rhs: MyRatingsItemViewModel) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 

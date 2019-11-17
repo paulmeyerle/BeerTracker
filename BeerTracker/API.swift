@@ -10,20 +10,15 @@ public final class MyRatingsQuery: GraphQLQuery {
     query MyRatings {
       myRatings {
         __typename
+        id
         rating
         beer {
           __typename
-          rating
           imageURL
           name
-          abv
-          ibu
-          type
           brewery {
             __typename
-            imageURL
             name
-            address
             state
             county
           }
@@ -68,6 +63,7 @@ public final class MyRatingsQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .scalar(String.self)),
         GraphQLField("rating", type: .scalar(Double.self)),
         GraphQLField("beer", type: .nonNull(.object(Beer.selections))),
       ]
@@ -78,8 +74,8 @@ public final class MyRatingsQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(rating: Double? = nil, beer: Beer) {
-        self.init(unsafeResultMap: ["__typename": "Rating", "rating": rating, "beer": beer.resultMap])
+      public init(id: String? = nil, rating: Double? = nil, beer: Beer) {
+        self.init(unsafeResultMap: ["__typename": "Rating", "id": id, "rating": rating, "beer": beer.resultMap])
       }
 
       public var __typename: String {
@@ -88,6 +84,15 @@ public final class MyRatingsQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: String? {
+        get {
+          return resultMap["id"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
         }
       }
 
@@ -114,12 +119,8 @@ public final class MyRatingsQuery: GraphQLQuery {
 
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("rating", type: .scalar(Double.self)),
           GraphQLField("imageURL", type: .scalar(String.self)),
           GraphQLField("name", type: .scalar(String.self)),
-          GraphQLField("abv", type: .scalar(Double.self)),
-          GraphQLField("ibu", type: .scalar(Double.self)),
-          GraphQLField("type", type: .scalar(String.self)),
           GraphQLField("brewery", type: .nonNull(.object(Brewery.selections))),
         ]
 
@@ -129,8 +130,8 @@ public final class MyRatingsQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(rating: Double? = nil, imageUrl: String? = nil, name: String? = nil, abv: Double? = nil, ibu: Double? = nil, type: String? = nil, brewery: Brewery) {
-          self.init(unsafeResultMap: ["__typename": "Beer", "rating": rating, "imageURL": imageUrl, "name": name, "abv": abv, "ibu": ibu, "type": type, "brewery": brewery.resultMap])
+        public init(imageUrl: String? = nil, name: String? = nil, brewery: Brewery) {
+          self.init(unsafeResultMap: ["__typename": "Beer", "imageURL": imageUrl, "name": name, "brewery": brewery.resultMap])
         }
 
         public var __typename: String {
@@ -139,15 +140,6 @@ public final class MyRatingsQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "__typename")
-          }
-        }
-
-        public var rating: Double? {
-          get {
-            return resultMap["rating"] as? Double
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "rating")
           }
         }
 
@@ -169,33 +161,6 @@ public final class MyRatingsQuery: GraphQLQuery {
           }
         }
 
-        public var abv: Double? {
-          get {
-            return resultMap["abv"] as? Double
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "abv")
-          }
-        }
-
-        public var ibu: Double? {
-          get {
-            return resultMap["ibu"] as? Double
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "ibu")
-          }
-        }
-
-        public var type: String? {
-          get {
-            return resultMap["type"] as? String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "type")
-          }
-        }
-
         public var brewery: Brewery {
           get {
             return Brewery(unsafeResultMap: resultMap["brewery"]! as! ResultMap)
@@ -210,9 +175,7 @@ public final class MyRatingsQuery: GraphQLQuery {
 
           public static let selections: [GraphQLSelection] = [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("imageURL", type: .scalar(String.self)),
             GraphQLField("name", type: .scalar(String.self)),
-            GraphQLField("address", type: .scalar(String.self)),
             GraphQLField("state", type: .scalar(String.self)),
             GraphQLField("county", type: .scalar(String.self)),
           ]
@@ -223,8 +186,8 @@ public final class MyRatingsQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(imageUrl: String? = nil, name: String? = nil, address: String? = nil, state: String? = nil, county: String? = nil) {
-            self.init(unsafeResultMap: ["__typename": "Brewery", "imageURL": imageUrl, "name": name, "address": address, "state": state, "county": county])
+          public init(name: String? = nil, state: String? = nil, county: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Brewery", "name": name, "state": state, "county": county])
           }
 
           public var __typename: String {
@@ -236,30 +199,12 @@ public final class MyRatingsQuery: GraphQLQuery {
             }
           }
 
-          public var imageUrl: String? {
-            get {
-              return resultMap["imageURL"] as? String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "imageURL")
-            }
-          }
-
           public var name: String? {
             get {
               return resultMap["name"] as? String
             }
             set {
               resultMap.updateValue(newValue, forKey: "name")
-            }
-          }
-
-          public var address: String? {
-            get {
-              return resultMap["address"] as? String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "address")
             }
           }
 
@@ -293,6 +238,7 @@ public final class SearchBeersQuery: GraphQLQuery {
     query SearchBeers($query: String!) {
       searchBeers(name: $query) {
         __typename
+        id
         imageURL
         name
         type
@@ -347,6 +293,7 @@ public final class SearchBeersQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .scalar(String.self)),
         GraphQLField("imageURL", type: .scalar(String.self)),
         GraphQLField("name", type: .scalar(String.self)),
         GraphQLField("type", type: .scalar(String.self)),
@@ -359,8 +306,8 @@ public final class SearchBeersQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(imageUrl: String? = nil, name: String? = nil, type: String? = nil, brewery: Brewery) {
-        self.init(unsafeResultMap: ["__typename": "Beer", "imageURL": imageUrl, "name": name, "type": type, "brewery": brewery.resultMap])
+      public init(id: String? = nil, imageUrl: String? = nil, name: String? = nil, type: String? = nil, brewery: Brewery) {
+        self.init(unsafeResultMap: ["__typename": "Beer", "id": id, "imageURL": imageUrl, "name": name, "type": type, "brewery": brewery.resultMap])
       }
 
       public var __typename: String {
@@ -369,6 +316,15 @@ public final class SearchBeersQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: String? {
+        get {
+          return resultMap["id"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
         }
       }
 

@@ -20,6 +20,8 @@ struct MyRatingsView: View {
     var body: some View {
         List(viewModel.cellViewModels) { cellViewModel in
             MyRatingsItemView(viewModel: cellViewModel)
+        }.onAppear {
+            self.viewModel.fetch()
         }
     }
 }
