@@ -42,7 +42,6 @@ struct SearchResultView: View {
                 Text(viewModel.beerStyleText)
                     .font(.subheadline)
             }
-            
         }
     }
 }

@@ -13,53 +13,13 @@ import XCTest
 class SearchResultViewModelTests: XCTestCase {
     
     // MARK: Constructor
-    
-    func test_init_SHOULD_returnNil_WHEN_nilId() {
-        let result = SearchBeersQuery.Data.SearchBeer(id: nil,
-                                                      imageUrl: nil,
+
+    func test_init_SHOULD_returnNil_WHEN_badUrl() {
+        let result = SearchBeersQuery.Data.SearchBeer(id: "id",
+                                                      imageUrl: " ",
                                                       name: "beerName",
                                                       type: "beerType",
-                                                      brewery: SearchBeersQuery.Data.SearchBeer.Brewery(name: "breweryName"))
-        let sut = SearchResultViewModel(result: result)
-        XCTAssertNil(sut)
-    }
-    
-    func test_init_SHOULD_returnNil_WHEN_nilUrl() {
-        let result = SearchBeersQuery.Data.SearchBeer(id: "id",
-                                                      imageUrl: nil,
-                                                      name: "beerName",
-                                                      type: "beerType",
-                                                      brewery: SearchBeersQuery.Data.SearchBeer.Brewery(name: "breweryName"))
-        let sut = SearchResultViewModel(result: result)
-        XCTAssertNil(sut)
-    }
-    
-    func test_init_SHOULD_returnNil_WHEN_nilName() {
-        let result = SearchBeersQuery.Data.SearchBeer(id: "id",
-                                                      imageUrl: "http://www.image.com",
-                                                      name: nil,
-                                                      type: "beerType",
-                                                      brewery: SearchBeersQuery.Data.SearchBeer.Brewery(name: "breweryName"))
-        let sut = SearchResultViewModel(result: result)
-        XCTAssertNil(sut)
-    }
-    
-    func test_init_SHOULD_returnNil_WHEN_nilType() {
-        let result = SearchBeersQuery.Data.SearchBeer(id: "id",
-                                                      imageUrl: "http://www.image.com",
-                                                      name: "beerName",
-                                                      type: nil,
-                                                      brewery: SearchBeersQuery.Data.SearchBeer.Brewery(name: "breweryName"))
-        let sut = SearchResultViewModel(result: result)
-        XCTAssertNil(sut)
-    }
-    
-    func test_init_SHOULD_returnNil_WHEN_nilBreweryName() {
-        let result = SearchBeersQuery.Data.SearchBeer(id: "id",
-                                                      imageUrl: "http://www.image.com",
-                                                      name: "beerName",
-                                                      type: "beerType",
-                                                      brewery: SearchBeersQuery.Data.SearchBeer.Brewery(name: nil))
+                                                      brewery: SearchBeersQuery.Data.SearchBeer.Brewery(name: "brewereyName"))
         let sut = SearchResultViewModel(result: result)
         XCTAssertNil(sut)
     }

@@ -26,18 +26,13 @@ final class SearchResultViewModel: Identifiable, ObservableObject {
     }
     
     convenience init?(result: SearchBeersQuery.Data.SearchBeer) {
-        guard let urlString = result.imageUrl,
-            let id = result.id,
-            let url = URL(string: urlString),
-            let beerName = result.name,
-            let beerStyle = result.type,
-            let breweryName = result.brewery.name else { return nil }
+        guard let url = URL(string: result.imageUrl) else { return nil }
         
-        self.init(id: id,
+        self.init(id: result.id,
                   imageURL: url,
-                  nameText: beerName,
-                  beerStyleText: beerStyle,
-                  breweryNameText: breweryName)
+                  nameText: result.name,
+                  beerStyleText: result.type,
+                  breweryNameText: result.brewery.name)
     }
 }
 

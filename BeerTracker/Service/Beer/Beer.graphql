@@ -1,0 +1,14 @@
+query Beer($beerId: String!) {
+  beer(id: $beerId) {
+    id
+    imageURL
+    name
+    abv
+    ibu
+    type
+    rating
+    brewery {
+      name
+    }
+  }
+}

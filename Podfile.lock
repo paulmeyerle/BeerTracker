@@ -7,22 +7,32 @@ PODS:
   - SDWebImage/Core (5.3.1)
   - SDWebImageSwiftUI (0.8.3):
     - SDWebImage (~> 5.3)
+  - Swinject (2.7.1)
+  - XCoordinator/Combine (2.0.5):
+    - XCoordinator/Core
+  - XCoordinator/Core (2.0.5)
 
 DEPENDENCIES:
   - Apollo (~> 0.19.0)
   - SDWebImageSwiftUI
+  - Swinject
+  - XCoordinator/Combine (~> 2.0)
 
 SPEC REPOS:
   trunk:
     - Apollo
     - SDWebImage
     - SDWebImageSwiftUI
+    - Swinject
+    - XCoordinator
 
 SPEC CHECKSUMS:
   Apollo: 4f0fea775a98bba34935764e49d27f2d3b1a5f21
   SDWebImage: 7137d57385fb632129838c1e6ab9528a22c666cc
   SDWebImageSwiftUI: b4869720699c355f3b61593c4a80f77d0534e31b
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  XCoordinator: 0a0591f1756245d5861fe20660ca680bfac9d027
 
-PODFILE CHECKSUM: f5f97850e0f3c171dc7148e6b760c45ef340ac9a
+PODFILE CHECKSUM: 7f01c2a4be1990ce1ad7a65facc53e318ae2b616
 
 COCOAPODS: 1.8.4

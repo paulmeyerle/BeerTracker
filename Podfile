@@ -8,6 +8,8 @@ target 'BeerTracker' do
   # Pods for BeerTracker
   pod 'Apollo', '~> 0.19.0'
   pod 'SDWebImageSwiftUI'
+  pod 'XCoordinator/Combine', '~> 2.0'
+  pod 'Swinject'
 
   target 'BeerTrackerTests' do
     inherit! :search_paths

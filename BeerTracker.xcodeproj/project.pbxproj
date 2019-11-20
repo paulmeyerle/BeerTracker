@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		54AE835123773B9600AD704C /* MyRatings.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 54AF3C032377333400357797 /* MyRatings.graphql */; };
 		54AE835323773BA900AD704C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835223773BA900AD704C /* API.swift */; };
 		54AE835623773EE600AD704C /* ApolloServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835523773EE600AD704C /* ApolloServiceProvider.swift */; };
 		54AE8358237899B600AD704C /* MyRatingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8357237899B600AD704C /* MyRatingsViewModel.swift */; };
@@ -19,7 +18,6 @@
 		54AE8369237B8B8200AD704C /* MyRatingsTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8368237B8B8200AD704C /* MyRatingsTabItem.swift */; };
 		54AE836B237C30C200AD704C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE836A237C30C200AD704C /* SearchViewModel.swift */; };
 		54AE836F237C317000AD704C /* SearchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE836E237C317000AD704C /* SearchProvider.swift */; };
-		54AE8371237C31C400AD704C /* Search.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 54AE8370237C31C400AD704C /* Search.graphql */; };
 		54AE8373237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8372237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift */; };
 		54AE8377237D814900AD704C /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8376237D814900AD704C /* SearchResultView.swift */; };
 		54AE8379237D815C00AD704C /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8378237D815C00AD704C /* SearchResultViewModel.swift */; };
@@ -33,6 +31,10 @@
 		54F118522381A80E00AA04B9 /* MyRatingsItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F118512381A80E00AA04B9 /* MyRatingsItemViewModelTests.swift */; };
 		54F118542381AB8F00AA04B9 /* MyRatingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F118532381AB8F00AA04B9 /* MyRatingsViewModelTests.swift */; };
 		54F118562381AF2500AA04B9 /* MockMyRatingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F118552381AF2500AA04B9 /* MockMyRatingsProvider.swift */; };
+		54F11859238569FC00AA04B9 /* BeerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F11858238569FB00AA04B9 /* BeerView.swift */; };
+		54F1185B23856A0900AA04B9 /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1185A23856A0900AA04B9 /* BeerViewModel.swift */; };
+		54F1185F23856CCA00AA04B9 /* BeerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1185E23856CCA00AA04B9 /* BeerProvider.swift */; };
+		54F1186123856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1186023856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift */; };
 		54F6AEE323772AB100604574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6AEE223772AB100604574 /* AppDelegate.swift */; };
 		54F6AEE523772AB100604574 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6AEE423772AB100604574 /* SceneDelegate.swift */; };
 		54F6AEE723772AB100604574 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6AEE623772AB100604574 /* ContentView.swift */; };
@@ -93,6 +95,11 @@
 		54F118512381A80E00AA04B9 /* MyRatingsItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsItemViewModelTests.swift; sourceTree = "<group>"; };
 		54F118532381AB8F00AA04B9 /* MyRatingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsViewModelTests.swift; sourceTree = "<group>"; };
 		54F118552381AF2500AA04B9 /* MockMyRatingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMyRatingsProvider.swift; sourceTree = "<group>"; };
+		54F11858238569FB00AA04B9 /* BeerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerView.swift; sourceTree = "<group>"; };
+		54F1185A23856A0900AA04B9 /* BeerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewModel.swift; sourceTree = "<group>"; };
+		54F1185D23856A7700AA04B9 /* Beer.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Beer.graphql; sourceTree = "<group>"; };
+		54F1185E23856CCA00AA04B9 /* BeerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerProvider.swift; sourceTree = "<group>"; };
+		54F1186023856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloServiceProvider+BeerProvider.swift"; sourceTree = "<group>"; };
 		54F6AEDF23772AB100604574 /* BeerTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F6AEE223772AB100604574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54F6AEE423772AB100604574 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +154,7 @@
 			children = (
 				54AE8362237ADE7B00AD704C /* ApolloClient+Combine.swift */,
 				54AE835523773EE600AD704C /* ApolloServiceProvider.swift */,
+				54F1185C23856A4A00AA04B9 /* Beer */,
 				54AE836C237C314500AD704C /* MyRatings */,
 				54AE836D237C315000AD704C /* Search */,
 			);
@@ -194,8 +202,9 @@
 		54AF3BF8237731D400357797 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				54AF3BFA237731E300357797 /* Search */,
+				54F11857238569D700AA04B9 /* Beer */,
 				54AF3BF9237731DC00357797 /* MyRatings */,
+				54AF3BFA237731E300357797 /* Search */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -273,6 +282,25 @@
 				54F118512381A80E00AA04B9 /* MyRatingsItemViewModelTests.swift */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		54F11857238569D700AA04B9 /* Beer */ = {
+			isa = PBXGroup;
+			children = (
+				54F11858238569FB00AA04B9 /* BeerView.swift */,
+				54F1185A23856A0900AA04B9 /* BeerViewModel.swift */,
+			);
+			path = Beer;
+			sourceTree = "<group>";
+		};
+		54F1185C23856A4A00AA04B9 /* Beer */ = {
+			isa = PBXGroup;
+			children = (
+				54F1185D23856A7700AA04B9 /* Beer.graphql */,
+				54F1186023856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift */,
+				54F1185E23856CCA00AA04B9 /* BeerProvider.swift */,
+			);
+			path = Beer;
 			sourceTree = "<group>";
 		};
 		54F6AED623772AB100604574 = {
@@ -476,9 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54F6AEEF23772AB400604574 /* LaunchScreen.storyboard in Resources */,
-				54AE8371237C31C400AD704C /* Search.graphql in Resources */,
 				54F6AEEC23772AB400604574 /* Preview Assets.xcassets in Resources */,
-				54AE835123773B9600AD704C /* MyRatings.graphql in Resources */,
 				54F6AEE923772AB400604574 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,7 +656,9 @@
 				54AE836B237C30C200AD704C /* SearchViewModel.swift in Sources */,
 				54AE8379237D815C00AD704C /* SearchResultViewModel.swift in Sources */,
 				54AE8377237D814900AD704C /* SearchResultView.swift in Sources */,
+				54F1186123856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift in Sources */,
 				54AF3BFC2377321800357797 /* MyRatingsView.swift in Sources */,
+				54F1185F23856CCA00AA04B9 /* BeerProvider.swift in Sources */,
 				54AE8369237B8B8200AD704C /* MyRatingsTabItem.swift in Sources */,
 				54AE835B2378ACF800AD704C /* MyRatingsItemViewModel.swift in Sources */,
 				54AE8358237899B600AD704C /* MyRatingsViewModel.swift in Sources */,
@@ -641,10 +669,12 @@
 				54AE835623773EE600AD704C /* ApolloServiceProvider.swift in Sources */,
 				54AE837B237D88FE00AD704C /* SearchBar.swift in Sources */,
 				54AE8373237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift in Sources */,
+				54F1185B23856A0900AA04B9 /* BeerViewModel.swift in Sources */,
 				54AE8361237ADE5B00AD704C /* ApolloServiceProvider+MyRatingsProvider.swift in Sources */,
 				54AE835D2378AD5C00AD704C /* MyRatingsItemView.swift in Sources */,
 				54AE8363237ADE7B00AD704C /* ApolloClient+Combine.swift in Sources */,
 				54AE835323773BA900AD704C /* API.swift in Sources */,
+				54F11859238569FC00AA04B9 /* BeerView.swift in Sources */,
 				54F6AEE723772AB100604574 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

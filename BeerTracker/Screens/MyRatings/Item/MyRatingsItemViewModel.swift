@@ -18,15 +18,11 @@ final class MyRatingsItemViewModel: Identifiable, ObservableObject {
     @Published var ratingText: String = ""
     
     convenience init?(rating: MyRatingsQuery.Data.MyRating) {
-        guard let id = rating.id,
-            let beerName = rating.beer.name,
-            let breweryName = rating.beer.brewery.name,
-            let urlString = rating.beer.imageUrl,
-            let url = URL(string: urlString) else { return nil }
+        guard let url = URL(string: rating.beer.imageUrl) else { return nil }
         
-        self.init(id: id,
-                  nameText: beerName,
-                  breweryText: breweryName,
+        self.init(id: rating.id,
+                  nameText: rating.beer.name,
+                  breweryText: rating.beer.brewery.name,
                   locationText: rating.beer.brewery.location,
                   imageURL: url,
                   ratingText: rating.ratingText)
@@ -55,16 +51,12 @@ extension MyRatingsItemViewModel: Equatable {
 
 private extension MyRatingsQuery.Data.MyRating {
     var ratingText: String {
-        guard let rating = rating else { return "Not Rated" }
         return "\(String(rating.rounded()))/5"
     }
 }
 
 private extension MyRatingsQuery.Data.MyRating.Beer.Brewery {
     var location: String {
-        guard let county = county,
-            let state = state else { return "" }
-        
         return "\(county)/\(state)"
     }
 }

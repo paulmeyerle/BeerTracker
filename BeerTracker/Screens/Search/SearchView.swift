@@ -17,12 +17,17 @@ struct SearchView: View {
     }
     
     var body: some View {
-        VStack {
-            SearchBar(text: $viewModel.searchQuery)
-                .padding()
-            
-            List(viewModel.resultViewModels) { model in
-                SearchResultView(viewModel: model)
+        NavigationView {
+            VStack {
+                SearchBar(text: $viewModel.searchQuery)
+                    .padding()
+                
+                List(viewModel.resultViewModels) { model in
+                    // TODO: Research coordinator pattern for navigation
+                    NavigationLink(destination: BeerView()) {
+                        SearchResultView(viewModel: model)
+                    }
+                }
             }
         }
     }
