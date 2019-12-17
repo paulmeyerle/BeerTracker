@@ -8,8 +8,10 @@
 
 import Combine
 import Foundation
+import XCoordinator
 
 final class SearchViewModel: ObservableObject {
+    private let router: UnownedRouter<SearchViewEvent>
     private let provider: SearchProvider
     private var disposeBag = Set<AnyCancellable>()
     private let mainDispatchQueue: DispatchQueue
@@ -50,19 +52,25 @@ final class SearchViewModel: ObservableObject {
                     let results = data.searchBeers else { return [] }
                 return results.compactMap { SearchResultViewModel(result: $0) }
             })
-        .print("resultViewModelsPublisher")
+            .print("resultViewModelsPublisher")
             .eraseToAnyPublisher()
     }()
     
     init(provider: SearchProvider,
+         router: UnownedRouter<SearchViewEvent>,
          mainDispatchQueue: DispatchQueue = DispatchQueue.main,
          globalDispatchQueue: DispatchQueue = DispatchQueue.global()) {
         self.provider = provider
+        self.router = router
         self.mainDispatchQueue = mainDispatchQueue
         self.globalDispatchQueue = globalDispatchQueue
         
         resultViewModelsPublisher
             .assign(to: \.resultViewModels, on: self)
             .store(in: &disposeBag)
+    }
+    
+    func onModelSelected(_ model: SearchResultViewModel) {
+        router.trigger(.beerIsPicked(id: model.id))
     }
 }

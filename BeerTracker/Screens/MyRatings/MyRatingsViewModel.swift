@@ -8,15 +8,22 @@
 
 import Combine
 import Foundation
+import XCoordinator
 
 final class MyRatingsViewModel: ObservableObject {
     private let provider: MyRatingsProvider
     private var disposeBag = Set<AnyCancellable>()
     private let onLoad = PassthroughSubject<Void, Never>()
     
+    private let router: UnownedRouter<MyRatingsViewEvent>
+    
     // MARK: Inputs
     func fetch() {
         onLoad.send(())
+    }
+    
+    func onModelSelected(_ model: MyRatingsItemViewModel) {
+        router.trigger(.ratingSelected)
     }
     
     // MARK: Outputs
@@ -58,8 +65,9 @@ final class MyRatingsViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }()
     
-    init(provider: MyRatingsProvider) {
+    init(provider: MyRatingsProvider, router: UnownedRouter<MyRatingsViewEvent>) {
         self.provider = provider
+        self.router = router
             
         isLoadingPublisher
             .assign(to: \.isLoading, on: self)

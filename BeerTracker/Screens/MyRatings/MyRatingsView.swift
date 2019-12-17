@@ -20,16 +20,20 @@ struct MyRatingsView: View {
     var body: some View {
         List(viewModel.cellViewModels) { cellViewModel in
             MyRatingsItemView(viewModel: cellViewModel)
-        }.onAppear {
+                .onTapGesture {
+                    self.viewModel.onModelSelected(cellViewModel)
+                }
+        }
+        .onAppear {
             self.viewModel.fetch()
         }
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        let provider = ApolloServiceProvider()
-        let viewModel = MyRatingsViewModel(provider: provider)
-        return MyRatingsView(viewModel: viewModel)
-    }
-}
+//struct SwiftUIView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let provider = ApolloServiceProvider()
+//        let viewModel = MyRatingsViewModel(provider: provider)
+//        return MyRatingsView(viewModel: viewModel)
+//    }
+//}

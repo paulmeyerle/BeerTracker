@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54A0BD2023A7CDE8004F963B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD1F23A7CDE8004F963B /* AppCoordinator.swift */; };
+		54A0BD2523A85471004F963B /* TabCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2423A85471004F963B /* TabCoordinatorEvent.swift */; };
+		54A0BD2723A85488004F963B /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2623A85488004F963B /* TabCoordinator.swift */; };
+		54A0BD2923A854B4004F963B /* HomeFlowCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2823A854B4004F963B /* HomeFlowCoordinatorEvent.swift */; };
+		54A0BD2B23A854C5004F963B /* HomeFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2A23A854C5004F963B /* HomeFlowCoordinator.swift */; };
+		54A0BD2D23A854E3004F963B /* SearchFlowCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2C23A854E3004F963B /* SearchFlowCoordinatorEvent.swift */; };
+		54A0BD2F23A854FA004F963B /* SearchFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2E23A854FA004F963B /* SearchFlowCoordinator.swift */; };
+		54A0BD3223A8552F004F963B /* AppCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD3123A8552F004F963B /* AppCoordinatorEvent.swift */; };
+		54A0BD3423A855A3004F963B /* MyRatingsViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD3323A855A3004F963B /* MyRatingsViewEvent.swift */; };
+		54A0BD3623A855C3004F963B /* SearchViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD3523A855C3004F963B /* SearchViewEvent.swift */; };
+		54A0BD3823A85B8E004F963B /* BeerViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD3723A85B8E004F963B /* BeerViewEvent.swift */; };
 		54AE835323773BA900AD704C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835223773BA900AD704C /* API.swift */; };
 		54AE835623773EE600AD704C /* ApolloServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835523773EE600AD704C /* ApolloServiceProvider.swift */; };
 		54AE8358237899B600AD704C /* MyRatingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8357237899B600AD704C /* MyRatingsViewModel.swift */; };
@@ -15,7 +26,6 @@
 		54AE835F237ADE2500AD704C /* MyRatingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835E237ADE2500AD704C /* MyRatingsProvider.swift */; };
 		54AE8361237ADE5B00AD704C /* ApolloServiceProvider+MyRatingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8360237ADE5B00AD704C /* ApolloServiceProvider+MyRatingsProvider.swift */; };
 		54AE8363237ADE7B00AD704C /* ApolloClient+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8362237ADE7B00AD704C /* ApolloClient+Combine.swift */; };
-		54AE8369237B8B8200AD704C /* MyRatingsTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8368237B8B8200AD704C /* MyRatingsTabItem.swift */; };
 		54AE836B237C30C200AD704C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE836A237C30C200AD704C /* SearchViewModel.swift */; };
 		54AE836F237C317000AD704C /* SearchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE836E237C317000AD704C /* SearchProvider.swift */; };
 		54AE8373237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8372237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift */; };
@@ -24,7 +34,6 @@
 		54AE837B237D88FE00AD704C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE837A237D88FE00AD704C /* SearchBar.swift */; };
 		54AF3BFC2377321800357797 /* MyRatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3BFB2377321800357797 /* MyRatingsView.swift */; };
 		54AF3C002377325900357797 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3BFF2377325900357797 /* SearchView.swift */; };
-		54AF3C022377326B00357797 /* SearchTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF3C012377326B00357797 /* SearchTabItem.swift */; };
 		54C4664323803523001D5CE9 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C4664223803523001D5CE9 /* SearchViewModelTests.swift */; };
 		54C466462380363D001D5CE9 /* MockSearchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C466452380363D001D5CE9 /* MockSearchProvider.swift */; };
 		54F1184E2381A36000AA04B9 /* SearchResultViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1184D2381A36000AA04B9 /* SearchResultViewModelTests.swift */; };
@@ -37,7 +46,6 @@
 		54F1186123856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1186023856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift */; };
 		54F6AEE323772AB100604574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6AEE223772AB100604574 /* AppDelegate.swift */; };
 		54F6AEE523772AB100604574 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6AEE423772AB100604574 /* SceneDelegate.swift */; };
-		54F6AEE723772AB100604574 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6AEE623772AB100604574 /* ContentView.swift */; };
 		54F6AEE923772AB400604574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F6AEE823772AB400604574 /* Assets.xcassets */; };
 		54F6AEEC23772AB400604574 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F6AEEB23772AB400604574 /* Preview Assets.xcassets */; };
 		54F6AEEF23772AB400604574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F6AEED23772AB400604574 /* LaunchScreen.storyboard */; };
@@ -68,6 +76,17 @@
 		31AED081D6DDF6AC1ECE581D /* Pods-BeerTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-BeerTrackerTests/Pods-BeerTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3CC690BABE57B0D32BB92BC1 /* Pods_BeerTracker_BeerTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerTracker_BeerTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D2A0B76279402A2F052D76B /* Pods-BeerTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerTracker.release.xcconfig"; path = "Target Support Files/Pods-BeerTracker/Pods-BeerTracker.release.xcconfig"; sourceTree = "<group>"; };
+		54A0BD1F23A7CDE8004F963B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		54A0BD2423A85471004F963B /* TabCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorEvent.swift; sourceTree = "<group>"; };
+		54A0BD2623A85488004F963B /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		54A0BD2823A854B4004F963B /* HomeFlowCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoordinatorEvent.swift; sourceTree = "<group>"; };
+		54A0BD2A23A854C5004F963B /* HomeFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoordinator.swift; sourceTree = "<group>"; };
+		54A0BD2C23A854E3004F963B /* SearchFlowCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowCoordinatorEvent.swift; sourceTree = "<group>"; };
+		54A0BD2E23A854FA004F963B /* SearchFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowCoordinator.swift; sourceTree = "<group>"; };
+		54A0BD3123A8552F004F963B /* AppCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorEvent.swift; sourceTree = "<group>"; };
+		54A0BD3323A855A3004F963B /* MyRatingsViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsViewEvent.swift; sourceTree = "<group>"; };
+		54A0BD3523A855C3004F963B /* SearchViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewEvent.swift; sourceTree = "<group>"; };
+		54A0BD3723A85B8E004F963B /* BeerViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewEvent.swift; sourceTree = "<group>"; };
 		54AE835223773BA900AD704C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		54AE835523773EE600AD704C /* ApolloServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloServiceProvider.swift; sourceTree = "<group>"; };
 		54AE8357237899B600AD704C /* MyRatingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsViewModel.swift; sourceTree = "<group>"; };
@@ -76,7 +95,6 @@
 		54AE835E237ADE2500AD704C /* MyRatingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsProvider.swift; sourceTree = "<group>"; };
 		54AE8360237ADE5B00AD704C /* ApolloServiceProvider+MyRatingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloServiceProvider+MyRatingsProvider.swift"; sourceTree = "<group>"; };
 		54AE8362237ADE7B00AD704C /* ApolloClient+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloClient+Combine.swift"; sourceTree = "<group>"; };
-		54AE8368237B8B8200AD704C /* MyRatingsTabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRatingsTabItem.swift; sourceTree = "<group>"; };
 		54AE836A237C30C200AD704C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		54AE836E237C317000AD704C /* SearchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProvider.swift; sourceTree = "<group>"; };
 		54AE8370237C31C400AD704C /* Search.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Search.graphql; sourceTree = "<group>"; };
@@ -87,7 +105,6 @@
 		54AE837A237D88FE00AD704C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		54AF3BFB2377321800357797 /* MyRatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsView.swift; sourceTree = "<group>"; };
 		54AF3BFF2377325900357797 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		54AF3C012377326B00357797 /* SearchTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabItem.swift; sourceTree = "<group>"; };
 		54AF3C032377333400357797 /* MyRatings.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyRatings.graphql; sourceTree = "<group>"; };
 		54C4664223803523001D5CE9 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		54C466452380363D001D5CE9 /* MockSearchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchProvider.swift; sourceTree = "<group>"; };
@@ -103,7 +120,6 @@
 		54F6AEDF23772AB100604574 /* BeerTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F6AEE223772AB100604574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54F6AEE423772AB100604574 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		54F6AEE623772AB100604574 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		54F6AEE823772AB400604574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54F6AEEB23772AB400604574 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		54F6AEEE23772AB400604574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -149,6 +165,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54A0BD1E23A7CDD7004F963B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				54A0BD3023A85518004F963B /* App */,
+				54A0BD2123A81578004F963B /* Home */,
+				54A0BD2323A85462004F963B /* Search */,
+				54A0BD2223A8157F004F963B /* Tab */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		54A0BD2123A81578004F963B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				54A0BD2823A854B4004F963B /* HomeFlowCoordinatorEvent.swift */,
+				54A0BD2A23A854C5004F963B /* HomeFlowCoordinator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		54A0BD2223A8157F004F963B /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				54A0BD2623A85488004F963B /* TabCoordinator.swift */,
+				54A0BD2423A85471004F963B /* TabCoordinatorEvent.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		54A0BD2323A85462004F963B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				54A0BD2C23A854E3004F963B /* SearchFlowCoordinatorEvent.swift */,
+				54A0BD2E23A854FA004F963B /* SearchFlowCoordinator.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		54A0BD3023A85518004F963B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				54A0BD1F23A7CDE8004F963B /* AppCoordinator.swift */,
+				54A0BD3123A8552F004F963B /* AppCoordinatorEvent.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		54AE835423773C3200AD704C /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,8 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				54AF3BFB2377321800357797 /* MyRatingsView.swift */,
+				54A0BD3323A855A3004F963B /* MyRatingsViewEvent.swift */,
 				54AE8357237899B600AD704C /* MyRatingsViewModel.swift */,
-				54AE8368237B8B8200AD704C /* MyRatingsTabItem.swift */,
 				54AE83592378ACD700AD704C /* Item */,
 			);
 			path = MyRatings;
@@ -223,11 +286,11 @@
 		54AF3BFA237731E300357797 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				54AE8375237D812C00AD704C /* Result */,
-				54AF3BFF2377325900357797 /* SearchView.swift */,
-				54AF3C012377326B00357797 /* SearchTabItem.swift */,
-				54AE836A237C30C200AD704C /* SearchViewModel.swift */,
 				54AE837A237D88FE00AD704C /* SearchBar.swift */,
+				54AF3BFF2377325900357797 /* SearchView.swift */,
+				54A0BD3523A855C3004F963B /* SearchViewEvent.swift */,
+				54AE836A237C30C200AD704C /* SearchViewModel.swift */,
+				54AE8375237D812C00AD704C /* Result */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -288,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				54F11858238569FB00AA04B9 /* BeerView.swift */,
+				54A0BD3723A85B8E004F963B /* BeerViewEvent.swift */,
 				54F1185A23856A0900AA04B9 /* BeerViewModel.swift */,
 			);
 			path = Beer;
@@ -332,9 +396,9 @@
 				54F6AEF023772AB400604574 /* Info.plist */,
 				54AE835223773BA900AD704C /* API.swift */,
 				54F6AEE223772AB100604574 /* AppDelegate.swift */,
-				54F6AEE623772AB100604574 /* ContentView.swift */,
 				54F6AEE423772AB100604574 /* SceneDelegate.swift */,
 				54F6AEE823772AB400604574 /* Assets.xcassets */,
+				54A0BD1E23A7CDD7004F963B /* Coordinators */,
 				54F6AEED23772AB400604574 /* LaunchScreen.storyboard */,
 				54F6AEEA23772AB400604574 /* Preview Content */,
 				54AF3BF8237731D400357797 /* Screens */,
@@ -652,30 +716,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				54F6AEE323772AB100604574 /* AppDelegate.swift in Sources */,
+				54A0BD2723A85488004F963B /* TabCoordinator.swift in Sources */,
 				54F6AEE523772AB100604574 /* SceneDelegate.swift in Sources */,
+				54A0BD2023A7CDE8004F963B /* AppCoordinator.swift in Sources */,
+				54A0BD2923A854B4004F963B /* HomeFlowCoordinatorEvent.swift in Sources */,
 				54AE836B237C30C200AD704C /* SearchViewModel.swift in Sources */,
 				54AE8379237D815C00AD704C /* SearchResultViewModel.swift in Sources */,
 				54AE8377237D814900AD704C /* SearchResultView.swift in Sources */,
 				54F1186123856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift in Sources */,
 				54AF3BFC2377321800357797 /* MyRatingsView.swift in Sources */,
+				54A0BD2D23A854E3004F963B /* SearchFlowCoordinatorEvent.swift in Sources */,
 				54F1185F23856CCA00AA04B9 /* BeerProvider.swift in Sources */,
-				54AE8369237B8B8200AD704C /* MyRatingsTabItem.swift in Sources */,
+				54A0BD2523A85471004F963B /* TabCoordinatorEvent.swift in Sources */,
 				54AE835B2378ACF800AD704C /* MyRatingsItemViewModel.swift in Sources */,
 				54AE8358237899B600AD704C /* MyRatingsViewModel.swift in Sources */,
 				54AF3C002377325900357797 /* SearchView.swift in Sources */,
 				54AE836F237C317000AD704C /* SearchProvider.swift in Sources */,
-				54AF3C022377326B00357797 /* SearchTabItem.swift in Sources */,
+				54A0BD3423A855A3004F963B /* MyRatingsViewEvent.swift in Sources */,
 				54AE835F237ADE2500AD704C /* MyRatingsProvider.swift in Sources */,
 				54AE835623773EE600AD704C /* ApolloServiceProvider.swift in Sources */,
 				54AE837B237D88FE00AD704C /* SearchBar.swift in Sources */,
+				54A0BD3823A85B8E004F963B /* BeerViewEvent.swift in Sources */,
 				54AE8373237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift in Sources */,
+				54A0BD2B23A854C5004F963B /* HomeFlowCoordinator.swift in Sources */,
 				54F1185B23856A0900AA04B9 /* BeerViewModel.swift in Sources */,
 				54AE8361237ADE5B00AD704C /* ApolloServiceProvider+MyRatingsProvider.swift in Sources */,
+				54A0BD3623A855C3004F963B /* SearchViewEvent.swift in Sources */,
 				54AE835D2378AD5C00AD704C /* MyRatingsItemView.swift in Sources */,
+				54A0BD3223A8552F004F963B /* AppCoordinatorEvent.swift in Sources */,
 				54AE8363237ADE7B00AD704C /* ApolloClient+Combine.swift in Sources */,
+				54A0BD2F23A854FA004F963B /* SearchFlowCoordinator.swift in Sources */,
 				54AE835323773BA900AD704C /* API.swift in Sources */,
 				54F11859238569FC00AA04B9 /* BeerView.swift in Sources */,
-				54F6AEE723772AB100604574 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

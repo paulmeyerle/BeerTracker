@@ -7,12 +7,14 @@
 //
 
 import Combine
-import Foundation
+import XCoordinator
 
 final class BeerViewModel: ObservableObject {
     private let provider: BeerProvider
+    private let router: UnownedRouter<BeerViewEvent>
     
-    init(beerId: UUID, provider: BeerProvider) {
+    init(beerId: String, provider: BeerProvider, router: UnownedRouter<BeerViewEvent>) {
         self.provider = provider
+        self.router = router
     }
 }
