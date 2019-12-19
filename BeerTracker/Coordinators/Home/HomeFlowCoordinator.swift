@@ -9,13 +9,15 @@
 import SwiftUI
 import XCoordinator
 
-final class HomeFlowCoordinator: NavigationCoordinator<HomeFlowCoordinatorEvent> {
+final class HomeFlowCoordinator: NavigationCoordinator<HomeFlowCoordinatorRoute> {
     
     private let myRatingsProvider: MyRatingsProvider
     
     init(myRatingsProvider: MyRatingsProvider) {
         self.myRatingsProvider = myRatingsProvider
         super.init(initialRoute: .myRatings)
+        
+        rootViewController.navigationBar.prefersLargeTitles = true
     }
     
     override func prepareTransition(for route: RouteType) -> NavigationTransition {
@@ -26,22 +28,22 @@ final class HomeFlowCoordinator: NavigationCoordinator<HomeFlowCoordinatorEvent>
                                                          parent: unownedRouter)
             addChild(coordinator)
             return .trigger(.started, on: coordinator)
-        case .ratingIsPicked:
-            let child = BeerScreenCoordinator(rootViewController: rootViewController,
+        case .ratingDetail(let id):
+            let child = RatingScreenCoordinator(rootViewController: rootViewController,
                                               parent: unownedRouter)
             addChild(child)
-            return .trigger(.started(id: "fake id"), on: child)
+            return .trigger(.started(id: id), on: child)
         }
     }
     
     final class MyRatingsScreenCoordinator: NavigationCoordinator<MyRatingsViewEvent> {
         
         private let myRatingsProvider: MyRatingsProvider
-        private let parent: UnownedRouter<HomeFlowCoordinatorEvent>
+        private let parent: UnownedRouter<HomeFlowCoordinatorRoute>
         
         init(rootViewController: RootViewController,
              myRatingsProvider: MyRatingsProvider,
-             parent: UnownedRouter<HomeFlowCoordinatorEvent>) {
+             parent: UnownedRouter<HomeFlowCoordinatorRoute>) {
             self.myRatingsProvider = myRatingsProvider
             self.parent = parent
             super.init(rootViewController: rootViewController)
@@ -55,22 +57,17 @@ final class HomeFlowCoordinator: NavigationCoordinator<HomeFlowCoordinatorEvent>
                 let view = MyRatingsView(viewModel: viewModel)
                 let controller = UIHostingController(rootView: view)
                 return .push(controller)
-            case .ratingSelected:
-                return .trigger(.ratingIsPicked, on: parent)
+            case .ratingIsPicked(let id):
+                return .trigger(.ratingDetail(id: id), on: parent)
             }
         }
     }
     
-    // TODO: Replace with Rating View
-    final class BeerScreenCoordinator: NavigationCoordinator<BeerViewEvent> {
-        
-        //        private let beerProvider: BeerProvider
-        private let parent: UnownedRouter<HomeFlowCoordinatorEvent>
+    final class RatingScreenCoordinator: NavigationCoordinator<RatingDetailViewEvent> {
+        private let parent: UnownedRouter<HomeFlowCoordinatorRoute>
         
         init(rootViewController: RootViewController,
-             //             beerProvider: BeerProvider,
-            parent: UnownedRouter<HomeFlowCoordinatorEvent>) {
-            //            self.beerProvider = beerProvider
+            parent: UnownedRouter<HomeFlowCoordinatorRoute>) {
             self.parent = parent
             super.init(rootViewController: rootViewController)
         }
@@ -78,7 +75,8 @@ final class HomeFlowCoordinator: NavigationCoordinator<HomeFlowCoordinatorEvent>
         override func prepareTransition(for route: RouteType) -> NavigationTransition {
             switch route {
             case .started(let id):
-                let view = BeerView()
+                print("id: \(id)")
+                let view = RatingDetailView()
                 let controller = UIHostingController(rootView: view)
                 return .push(controller)
             }

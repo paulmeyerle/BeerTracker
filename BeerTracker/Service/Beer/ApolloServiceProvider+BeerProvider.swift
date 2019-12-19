@@ -10,7 +10,7 @@ import Combine
 import Foundation
 
 extension ApolloServiceProvider: BeerProvider {
-    func fetchBeer(id: UUID) -> AnyPublisher<BeerQuery.Data, Error> {
-        return client.fetch(query: BeerQuery(beerId: id.uuidString))
+    func fetchBeer(id: String) -> AnyPublisher<BeerQuery.Data, Error> {
+        return client.fetch(query: BeerQuery(beerId: id))
     }
 }

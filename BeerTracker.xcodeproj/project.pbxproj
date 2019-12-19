@@ -7,17 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54082CB523ABAE060043CE3E /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CB423ABAE060043CE3E /* CircleImage.swift */; };
 		54A0BD2023A7CDE8004F963B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD1F23A7CDE8004F963B /* AppCoordinator.swift */; };
-		54A0BD2523A85471004F963B /* TabCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2423A85471004F963B /* TabCoordinatorEvent.swift */; };
+		54A0BD2523A85471004F963B /* TabCoordinatorRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2423A85471004F963B /* TabCoordinatorRoute.swift */; };
 		54A0BD2723A85488004F963B /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2623A85488004F963B /* TabCoordinator.swift */; };
-		54A0BD2923A854B4004F963B /* HomeFlowCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2823A854B4004F963B /* HomeFlowCoordinatorEvent.swift */; };
+		54A0BD2923A854B4004F963B /* HomeFlowCoordinatorRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2823A854B4004F963B /* HomeFlowCoordinatorRoute.swift */; };
 		54A0BD2B23A854C5004F963B /* HomeFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2A23A854C5004F963B /* HomeFlowCoordinator.swift */; };
-		54A0BD2D23A854E3004F963B /* SearchFlowCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2C23A854E3004F963B /* SearchFlowCoordinatorEvent.swift */; };
+		54A0BD2D23A854E3004F963B /* SearchFlowCoordinatorRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2C23A854E3004F963B /* SearchFlowCoordinatorRoute.swift */; };
 		54A0BD2F23A854FA004F963B /* SearchFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2E23A854FA004F963B /* SearchFlowCoordinator.swift */; };
-		54A0BD3223A8552F004F963B /* AppCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD3123A8552F004F963B /* AppCoordinatorEvent.swift */; };
+		54A0BD3223A8552F004F963B /* AppCoordinatorRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD3123A8552F004F963B /* AppCoordinatorRoute.swift */; };
 		54A0BD3423A855A3004F963B /* MyRatingsViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD3323A855A3004F963B /* MyRatingsViewEvent.swift */; };
 		54A0BD3623A855C3004F963B /* SearchViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD3523A855C3004F963B /* SearchViewEvent.swift */; };
-		54A0BD3823A85B8E004F963B /* BeerViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD3723A85B8E004F963B /* BeerViewEvent.swift */; };
+		54A0BD3823A85B8E004F963B /* BeerDetailViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD3723A85B8E004F963B /* BeerDetailViewEvent.swift */; };
+		54A0BD3B23A91403004F963B /* DismissingKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD3A23A91403004F963B /* DismissingKeyboard.swift */; };
+		54A0BD4923A91E3F004F963B /* RatingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD4623A91E3F004F963B /* RatingDetailView.swift */; };
+		54A0BD4A23A91E3F004F963B /* RatingDetailViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD4723A91E3F004F963B /* RatingDetailViewEvent.swift */; };
+		54A0BD4B23A91E3F004F963B /* RatingDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD4823A91E3F004F963B /* RatingDetailViewModel.swift */; };
 		54AE835323773BA900AD704C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835223773BA900AD704C /* API.swift */; };
 		54AE835623773EE600AD704C /* ApolloServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE835523773EE600AD704C /* ApolloServiceProvider.swift */; };
 		54AE8358237899B600AD704C /* MyRatingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8357237899B600AD704C /* MyRatingsViewModel.swift */; };
@@ -40,8 +45,8 @@
 		54F118522381A80E00AA04B9 /* MyRatingsItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F118512381A80E00AA04B9 /* MyRatingsItemViewModelTests.swift */; };
 		54F118542381AB8F00AA04B9 /* MyRatingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F118532381AB8F00AA04B9 /* MyRatingsViewModelTests.swift */; };
 		54F118562381AF2500AA04B9 /* MockMyRatingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F118552381AF2500AA04B9 /* MockMyRatingsProvider.swift */; };
-		54F11859238569FC00AA04B9 /* BeerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F11858238569FB00AA04B9 /* BeerView.swift */; };
-		54F1185B23856A0900AA04B9 /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1185A23856A0900AA04B9 /* BeerViewModel.swift */; };
+		54F11859238569FC00AA04B9 /* BeerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F11858238569FB00AA04B9 /* BeerDetailView.swift */; };
+		54F1185B23856A0900AA04B9 /* BeerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1185A23856A0900AA04B9 /* BeerDetailViewModel.swift */; };
 		54F1185F23856CCA00AA04B9 /* BeerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1185E23856CCA00AA04B9 /* BeerProvider.swift */; };
 		54F1186123856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1186023856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift */; };
 		54F6AEE323772AB100604574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6AEE223772AB100604574 /* AppDelegate.swift */; };
@@ -76,17 +81,22 @@
 		31AED081D6DDF6AC1ECE581D /* Pods-BeerTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-BeerTrackerTests/Pods-BeerTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3CC690BABE57B0D32BB92BC1 /* Pods_BeerTracker_BeerTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerTracker_BeerTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D2A0B76279402A2F052D76B /* Pods-BeerTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerTracker.release.xcconfig"; path = "Target Support Files/Pods-BeerTracker/Pods-BeerTracker.release.xcconfig"; sourceTree = "<group>"; };
+		54082CB423ABAE060043CE3E /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		54A0BD1F23A7CDE8004F963B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		54A0BD2423A85471004F963B /* TabCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorEvent.swift; sourceTree = "<group>"; };
+		54A0BD2423A85471004F963B /* TabCoordinatorRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorRoute.swift; sourceTree = "<group>"; };
 		54A0BD2623A85488004F963B /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
-		54A0BD2823A854B4004F963B /* HomeFlowCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoordinatorEvent.swift; sourceTree = "<group>"; };
+		54A0BD2823A854B4004F963B /* HomeFlowCoordinatorRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoordinatorRoute.swift; sourceTree = "<group>"; };
 		54A0BD2A23A854C5004F963B /* HomeFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoordinator.swift; sourceTree = "<group>"; };
-		54A0BD2C23A854E3004F963B /* SearchFlowCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowCoordinatorEvent.swift; sourceTree = "<group>"; };
+		54A0BD2C23A854E3004F963B /* SearchFlowCoordinatorRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowCoordinatorRoute.swift; sourceTree = "<group>"; };
 		54A0BD2E23A854FA004F963B /* SearchFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowCoordinator.swift; sourceTree = "<group>"; };
-		54A0BD3123A8552F004F963B /* AppCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorEvent.swift; sourceTree = "<group>"; };
+		54A0BD3123A8552F004F963B /* AppCoordinatorRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorRoute.swift; sourceTree = "<group>"; };
 		54A0BD3323A855A3004F963B /* MyRatingsViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsViewEvent.swift; sourceTree = "<group>"; };
 		54A0BD3523A855C3004F963B /* SearchViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewEvent.swift; sourceTree = "<group>"; };
-		54A0BD3723A85B8E004F963B /* BeerViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewEvent.swift; sourceTree = "<group>"; };
+		54A0BD3723A85B8E004F963B /* BeerDetailViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewEvent.swift; sourceTree = "<group>"; };
+		54A0BD3A23A91403004F963B /* DismissingKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingKeyboard.swift; sourceTree = "<group>"; };
+		54A0BD4623A91E3F004F963B /* RatingDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingDetailView.swift; sourceTree = "<group>"; };
+		54A0BD4723A91E3F004F963B /* RatingDetailViewEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingDetailViewEvent.swift; sourceTree = "<group>"; };
+		54A0BD4823A91E3F004F963B /* RatingDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingDetailViewModel.swift; sourceTree = "<group>"; };
 		54AE835223773BA900AD704C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		54AE835523773EE600AD704C /* ApolloServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloServiceProvider.swift; sourceTree = "<group>"; };
 		54AE8357237899B600AD704C /* MyRatingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsViewModel.swift; sourceTree = "<group>"; };
@@ -112,8 +122,8 @@
 		54F118512381A80E00AA04B9 /* MyRatingsItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsItemViewModelTests.swift; sourceTree = "<group>"; };
 		54F118532381AB8F00AA04B9 /* MyRatingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingsViewModelTests.swift; sourceTree = "<group>"; };
 		54F118552381AF2500AA04B9 /* MockMyRatingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMyRatingsProvider.swift; sourceTree = "<group>"; };
-		54F11858238569FB00AA04B9 /* BeerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerView.swift; sourceTree = "<group>"; };
-		54F1185A23856A0900AA04B9 /* BeerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewModel.swift; sourceTree = "<group>"; };
+		54F11858238569FB00AA04B9 /* BeerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailView.swift; sourceTree = "<group>"; };
+		54F1185A23856A0900AA04B9 /* BeerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewModel.swift; sourceTree = "<group>"; };
 		54F1185D23856A7700AA04B9 /* Beer.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Beer.graphql; sourceTree = "<group>"; };
 		54F1185E23856CCA00AA04B9 /* BeerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerProvider.swift; sourceTree = "<group>"; };
 		54F1186023856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloServiceProvider+BeerProvider.swift"; sourceTree = "<group>"; };
@@ -179,7 +189,7 @@
 		54A0BD2123A81578004F963B /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				54A0BD2823A854B4004F963B /* HomeFlowCoordinatorEvent.swift */,
+				54A0BD2823A854B4004F963B /* HomeFlowCoordinatorRoute.swift */,
 				54A0BD2A23A854C5004F963B /* HomeFlowCoordinator.swift */,
 			);
 			path = Home;
@@ -189,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				54A0BD2623A85488004F963B /* TabCoordinator.swift */,
-				54A0BD2423A85471004F963B /* TabCoordinatorEvent.swift */,
+				54A0BD2423A85471004F963B /* TabCoordinatorRoute.swift */,
 			);
 			path = Tab;
 			sourceTree = "<group>";
@@ -197,7 +207,7 @@
 		54A0BD2323A85462004F963B /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				54A0BD2C23A854E3004F963B /* SearchFlowCoordinatorEvent.swift */,
+				54A0BD2C23A854E3004F963B /* SearchFlowCoordinatorRoute.swift */,
 				54A0BD2E23A854FA004F963B /* SearchFlowCoordinator.swift */,
 			);
 			path = Search;
@@ -207,9 +217,36 @@
 			isa = PBXGroup;
 			children = (
 				54A0BD1F23A7CDE8004F963B /* AppCoordinator.swift */,
-				54A0BD3123A8552F004F963B /* AppCoordinatorEvent.swift */,
+				54A0BD3123A8552F004F963B /* AppCoordinatorRoute.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		54A0BD3923A913F2004F963B /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				54A0BD3A23A91403004F963B /* DismissingKeyboard.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		54A0BD3C23A91420004F963B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54AE837A237D88FE00AD704C /* SearchBar.swift */,
+				54082CB423ABAE060043CE3E /* CircleImage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		54A0BD4523A91E3F004F963B /* RatingDetail */ = {
+			isa = PBXGroup;
+			children = (
+				54A0BD4623A91E3F004F963B /* RatingDetailView.swift */,
+				54A0BD4723A91E3F004F963B /* RatingDetailViewEvent.swift */,
+				54A0BD4823A91E3F004F963B /* RatingDetailViewModel.swift */,
+			);
+			path = RatingDetail;
 			sourceTree = "<group>";
 		};
 		54AE835423773C3200AD704C /* Service */ = {
@@ -265,7 +302,8 @@
 		54AF3BF8237731D400357797 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				54F11857238569D700AA04B9 /* Beer */,
+				54A0BD4523A91E3F004F963B /* RatingDetail */,
+				54F11857238569D700AA04B9 /* BeerDetail */,
 				54AF3BF9237731DC00357797 /* MyRatings */,
 				54AF3BFA237731E300357797 /* Search */,
 			);
@@ -286,7 +324,6 @@
 		54AF3BFA237731E300357797 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				54AE837A237D88FE00AD704C /* SearchBar.swift */,
 				54AF3BFF2377325900357797 /* SearchView.swift */,
 				54A0BD3523A855C3004F963B /* SearchViewEvent.swift */,
 				54AE836A237C30C200AD704C /* SearchViewModel.swift */,
@@ -347,14 +384,14 @@
 			path = Item;
 			sourceTree = "<group>";
 		};
-		54F11857238569D700AA04B9 /* Beer */ = {
+		54F11857238569D700AA04B9 /* BeerDetail */ = {
 			isa = PBXGroup;
 			children = (
-				54F11858238569FB00AA04B9 /* BeerView.swift */,
-				54A0BD3723A85B8E004F963B /* BeerViewEvent.swift */,
-				54F1185A23856A0900AA04B9 /* BeerViewModel.swift */,
+				54F11858238569FB00AA04B9 /* BeerDetailView.swift */,
+				54A0BD3723A85B8E004F963B /* BeerDetailViewEvent.swift */,
+				54F1185A23856A0900AA04B9 /* BeerDetailViewModel.swift */,
 			);
-			path = Beer;
+			path = BeerDetail;
 			sourceTree = "<group>";
 		};
 		54F1185C23856A4A00AA04B9 /* Beer */ = {
@@ -400,9 +437,11 @@
 				54F6AEE823772AB400604574 /* Assets.xcassets */,
 				54A0BD1E23A7CDD7004F963B /* Coordinators */,
 				54F6AEED23772AB400604574 /* LaunchScreen.storyboard */,
+				54A0BD3923A913F2004F963B /* Modifiers */,
 				54F6AEEA23772AB400604574 /* Preview Content */,
 				54AF3BF8237731D400357797 /* Screens */,
 				54AE835423773C3200AD704C /* Service */,
+				54A0BD3C23A91420004F963B /* Views */,
 			);
 			path = BeerTracker;
 			sourceTree = "<group>";
@@ -719,35 +758,40 @@
 				54A0BD2723A85488004F963B /* TabCoordinator.swift in Sources */,
 				54F6AEE523772AB100604574 /* SceneDelegate.swift in Sources */,
 				54A0BD2023A7CDE8004F963B /* AppCoordinator.swift in Sources */,
-				54A0BD2923A854B4004F963B /* HomeFlowCoordinatorEvent.swift in Sources */,
+				54A0BD2923A854B4004F963B /* HomeFlowCoordinatorRoute.swift in Sources */,
+				54A0BD4923A91E3F004F963B /* RatingDetailView.swift in Sources */,
 				54AE836B237C30C200AD704C /* SearchViewModel.swift in Sources */,
 				54AE8379237D815C00AD704C /* SearchResultViewModel.swift in Sources */,
 				54AE8377237D814900AD704C /* SearchResultView.swift in Sources */,
+				54A0BD3B23A91403004F963B /* DismissingKeyboard.swift in Sources */,
 				54F1186123856FDF00AA04B9 /* ApolloServiceProvider+BeerProvider.swift in Sources */,
 				54AF3BFC2377321800357797 /* MyRatingsView.swift in Sources */,
-				54A0BD2D23A854E3004F963B /* SearchFlowCoordinatorEvent.swift in Sources */,
+				54A0BD2D23A854E3004F963B /* SearchFlowCoordinatorRoute.swift in Sources */,
 				54F1185F23856CCA00AA04B9 /* BeerProvider.swift in Sources */,
-				54A0BD2523A85471004F963B /* TabCoordinatorEvent.swift in Sources */,
+				54A0BD2523A85471004F963B /* TabCoordinatorRoute.swift in Sources */,
+				54082CB523ABAE060043CE3E /* CircleImage.swift in Sources */,
 				54AE835B2378ACF800AD704C /* MyRatingsItemViewModel.swift in Sources */,
 				54AE8358237899B600AD704C /* MyRatingsViewModel.swift in Sources */,
 				54AF3C002377325900357797 /* SearchView.swift in Sources */,
 				54AE836F237C317000AD704C /* SearchProvider.swift in Sources */,
+				54A0BD4A23A91E3F004F963B /* RatingDetailViewEvent.swift in Sources */,
 				54A0BD3423A855A3004F963B /* MyRatingsViewEvent.swift in Sources */,
 				54AE835F237ADE2500AD704C /* MyRatingsProvider.swift in Sources */,
 				54AE835623773EE600AD704C /* ApolloServiceProvider.swift in Sources */,
 				54AE837B237D88FE00AD704C /* SearchBar.swift in Sources */,
-				54A0BD3823A85B8E004F963B /* BeerViewEvent.swift in Sources */,
+				54A0BD4B23A91E3F004F963B /* RatingDetailViewModel.swift in Sources */,
+				54A0BD3823A85B8E004F963B /* BeerDetailViewEvent.swift in Sources */,
 				54AE8373237C325300AD704C /* ApolloServiceProvider+SearchProvider.swift in Sources */,
 				54A0BD2B23A854C5004F963B /* HomeFlowCoordinator.swift in Sources */,
-				54F1185B23856A0900AA04B9 /* BeerViewModel.swift in Sources */,
+				54F1185B23856A0900AA04B9 /* BeerDetailViewModel.swift in Sources */,
 				54AE8361237ADE5B00AD704C /* ApolloServiceProvider+MyRatingsProvider.swift in Sources */,
 				54A0BD3623A855C3004F963B /* SearchViewEvent.swift in Sources */,
 				54AE835D2378AD5C00AD704C /* MyRatingsItemView.swift in Sources */,
-				54A0BD3223A8552F004F963B /* AppCoordinatorEvent.swift in Sources */,
+				54A0BD3223A8552F004F963B /* AppCoordinatorRoute.swift in Sources */,
 				54AE8363237ADE7B00AD704C /* ApolloClient+Combine.swift in Sources */,
 				54A0BD2F23A854FA004F963B /* SearchFlowCoordinator.swift in Sources */,
 				54AE835323773BA900AD704C /* API.swift in Sources */,
-				54F11859238569FC00AA04B9 /* BeerView.swift in Sources */,
+				54F11859238569FC00AA04B9 /* BeerDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

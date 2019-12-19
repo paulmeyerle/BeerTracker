@@ -10,5 +10,5 @@ import Combine
 import Foundation
 
 protocol BeerProvider {
-    func fetchBeer(id: UUID) -> AnyPublisher<BeerQuery.Data, Error>
+    func fetchBeer(id: String) -> AnyPublisher<BeerQuery.Data, Error>
 }

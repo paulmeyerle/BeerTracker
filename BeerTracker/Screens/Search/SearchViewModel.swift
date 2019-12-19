@@ -21,6 +21,8 @@ final class SearchViewModel: ObservableObject {
     @Published var searchQuery: String = ""
     
     // MARK: Outputs
+    let titleText: String = "Search"
+    let placeholderText: String = "Search for beers here"
     @Published var resultViewModels: [SearchResultViewModel] = []
     
     private lazy var fetchTriggerPublisher: AnyPublisher<String, Never> = {

@@ -9,12 +9,16 @@
 import SwiftUI
 import XCoordinator
 
-final class SearchFlowCoordinator: NavigationCoordinator<SearchFlowCoordinatorEvent> {
+final class SearchFlowCoordinator: NavigationCoordinator<SearchFlowCoordinatorRoute> {
     private let searchProvider: SearchProvider
+    private let beerProvider: BeerProvider
     
-    init(searchProvider: SearchProvider) {
+    init(searchProvider: SearchProvider, beerProvider: BeerProvider) {
         self.searchProvider = searchProvider
+        self.beerProvider = beerProvider
         super.init(initialRoute: .search)
+        
+        rootViewController.navigationBar.prefersLargeTitles = true
     }
     
     override func prepareTransition(for route: RouteType) -> NavigationTransition {
@@ -27,6 +31,7 @@ final class SearchFlowCoordinator: NavigationCoordinator<SearchFlowCoordinatorEv
             return .trigger(.started, on: child)
         case .beerDetails(let id):
             let child = BeerScreenCoordinator(rootViewController: rootViewController,
+                                              beerProvider: beerProvider,
                                               parent: unownedRouter)
             addChild(child)
             return .trigger(.started(id: id), on: child)
@@ -36,11 +41,11 @@ final class SearchFlowCoordinator: NavigationCoordinator<SearchFlowCoordinatorEv
     final class SearchScreenCoordinator: NavigationCoordinator<SearchViewEvent> {
         
         private let searchProvider: SearchProvider
-        private let parent: UnownedRouter<SearchFlowCoordinatorEvent>
+        private let parent: UnownedRouter<SearchFlowCoordinatorRoute>
         
         init(rootViewController: RootViewController,
              searchProvider: SearchProvider,
-             parent: UnownedRouter<SearchFlowCoordinatorEvent>) {
+             parent: UnownedRouter<SearchFlowCoordinatorRoute>) {
             self.searchProvider = searchProvider
             self.parent = parent
             super.init(rootViewController: rootViewController)
@@ -60,15 +65,15 @@ final class SearchFlowCoordinator: NavigationCoordinator<SearchFlowCoordinatorEv
         }
     }
     
-    final class BeerScreenCoordinator: NavigationCoordinator<BeerViewEvent> {
+    final class BeerScreenCoordinator: NavigationCoordinator<BeerDetailViewEvent> {
         
-//        private let beerProvider: BeerProvider
-        private let parent: UnownedRouter<SearchFlowCoordinatorEvent>
+        private let beerProvider: BeerProvider
+        private let parent: UnownedRouter<SearchFlowCoordinatorRoute>
         
         init(rootViewController: RootViewController,
-//             beerProvider: BeerProvider,
-             parent: UnownedRouter<SearchFlowCoordinatorEvent>) {
-//            self.beerProvider = beerProvider
+             beerProvider: BeerProvider,
+             parent: UnownedRouter<SearchFlowCoordinatorRoute>) {
+            self.beerProvider = beerProvider
             self.parent = parent
             super.init(rootViewController: rootViewController)
         }
@@ -76,11 +81,10 @@ final class SearchFlowCoordinator: NavigationCoordinator<SearchFlowCoordinatorEv
         override func prepareTransition(for route: RouteType) -> NavigationTransition {
             switch route {
             case .started(let id):
-//                let viewModel = BeerViewModel(beerId: id,
-//                                              provider: beerProvider,
-//                                              router: unownedRouter)
-//                let view = BeerView(viewModel: viewModel)
-                let view = BeerView()
+                let viewModel = BeerDetailViewModel(id: id,
+                                                    provider: beerProvider,
+                                                    router: unownedRouter)
+                let view = BeerDetailView(viewModel: viewModel)
                 let controller = UIHostingController(rootView: view)
                 return .push(controller)
             }

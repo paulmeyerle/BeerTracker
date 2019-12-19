@@ -1,5 +1,5 @@
 //
-//  TabCoordinatorEvent.swift
+//  TabCoordinatorRoute.swift
 //  BeerTracker
 //
 //  Created by Paul Meyerle on 12/16/19.
@@ -8,7 +8,7 @@
 
 import XCoordinator
 
-enum TabCoordinatorEvent: Route {
+enum TabCoordinatorRoute: Route {
     case myRatings
     case search
 }

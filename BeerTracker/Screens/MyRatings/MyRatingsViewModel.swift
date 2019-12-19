@@ -23,10 +23,11 @@ final class MyRatingsViewModel: ObservableObject {
     }
     
     func onModelSelected(_ model: MyRatingsItemViewModel) {
-        router.trigger(.ratingSelected)
+        router.trigger(.ratingIsPicked(id: model.id))
     }
     
     // MARK: Outputs
+    let titleText: String = "My Ratings"
     @Published var cellViewModels: [MyRatingsItemViewModel] = []
     @Published var isLoading: Bool = false
     

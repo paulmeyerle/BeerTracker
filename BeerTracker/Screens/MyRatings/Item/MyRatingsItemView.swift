@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
 
 struct MyRatingsItemView: View {
     
@@ -19,21 +18,7 @@ struct MyRatingsItemView: View {
     
     var body: some View {
         HStack(alignment: .center) {
-            VStack {
-                WebImage(url: viewModel.imageURL)
-                    .placeholder {
-                        ZStack {
-                            Rectangle()
-                                .fill(Color(.lightGray))
-                            ActivityIndicator(.constant(true), style: .medium)
-                        }
-                    }
-                    .resizable()
-                    .aspectRatio(1, contentMode: .fit)
-                    .cornerRadius(5)
-            }
-            .frame(width: 100, height: 100)
-
+            CircleImage(imageURL: viewModel.imageURL, diameter: 75)
             VStack(alignment: .leading) {
                 Text(viewModel.nameText)
                     .font(.headline)

@@ -14,19 +14,24 @@ struct MyRatingsView: View {
     @ObservedObject private var viewModel: MyRatingsViewModel
     
     init(viewModel: MyRatingsViewModel) {
-      self.viewModel = viewModel
+        self.viewModel = viewModel
     }
     
     var body: some View {
         List(viewModel.cellViewModels) { cellViewModel in
-            MyRatingsItemView(viewModel: cellViewModel)
-                .onTapGesture {
-                    self.viewModel.onModelSelected(cellViewModel)
-                }
+            VStack(alignment: .leading) {
+                MyRatingsItemView(viewModel: cellViewModel)
+                    .onTapGesture {
+                        self.viewModel.onModelSelected(cellViewModel)
+                    }
+                
+                Divider()
+            }
         }
         .onAppear {
             self.viewModel.fetch()
         }
+        .navigationBarTitle(viewModel.titleText)
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  HomeFlowCoordinatorEvent.swift
+//  SearchFlowCoordinatorRoute.swift
 //  BeerTracker
 //
 //  Created by Paul Meyerle on 12/16/19.
@@ -8,7 +8,7 @@
 
 import XCoordinator
 
-enum HomeFlowCoordinatorEvent: Route {
-    case myRatings
-    case ratingIsPicked
+enum SearchFlowCoordinatorRoute: Route {
+    case search
+    case beerDetails(id: String)
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2019 Paul Meyerle. All rights reserved.
 //
 
-import SDWebImageSwiftUI
 import SwiftUI
 
 struct SearchResultView: View {
@@ -19,20 +18,7 @@ struct SearchResultView: View {
     
     var body: some View {
         HStack {
-            VStack {
-                WebImage(url: viewModel.imageURL)
-                    .placeholder {
-                        ZStack {
-                            Rectangle()
-                                .fill(Color(.lightGray))
-                            ActivityIndicator(.constant(true), style: .medium)
-                        }
-                    }
-                    .resizable()
-                    .aspectRatio(1, contentMode: .fit)
-                    .cornerRadius(5)
-            }
-            .frame(width: 50, height: 50)
+            CircleImage(imageURL: viewModel.imageURL, diameter: 50)
 
             VStack(alignment: .leading) {
                 Text(viewModel.nameText)

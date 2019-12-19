@@ -1,5 +1,5 @@
 //
-//  SearchFlowCoordinatorEvent.swift
+//  BeerDetailViewEvent.swift
 //  BeerTracker
 //
 //  Created by Paul Meyerle on 12/16/19.
@@ -8,7 +8,6 @@
 
 import XCoordinator
 
-enum SearchFlowCoordinatorEvent: Route {
-    case search
-    case beerDetails(id: String)
+enum BeerDetailViewEvent: Route {
+    case started(id: String)
 }

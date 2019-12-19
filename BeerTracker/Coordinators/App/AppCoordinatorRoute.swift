@@ -1,5 +1,5 @@
 //
-//  BeerViewEvent.swift
+//  AppCoordinatorRoute.swift
 //  BeerTracker
 //
 //  Created by Paul Meyerle on 12/16/19.
@@ -8,6 +8,6 @@
 
 import XCoordinator
 
-enum BeerViewEvent: Route {
-    case started(id: String)
+enum AppCoordinatorRoute: Route {
+    case home
 }

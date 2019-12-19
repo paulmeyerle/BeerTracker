@@ -17,19 +17,32 @@ struct SearchView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                SearchBar(text: $viewModel.searchQuery)
-                    .padding()
-                
-                List(viewModel.resultViewModels) { model in
-                    SearchResultView(viewModel: model)
-                        .onTapGesture {
-                            self.viewModel.onModelSelected(model)
-                        }
-                }                    
+        VStack {
+            Group {
+                TextField(viewModel.placeholderText, text: $viewModel.searchQuery)
+                    .padding(6)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(Color(UIColor.lightGray), lineWidth: 1)
+                    )
+                    .navigationBarTitle(viewModel.titleText)
             }
+            .padding()
+
+            Group {
+                List(viewModel.resultViewModels) { model in
+                    VStack(alignment: .leading) {
+                        SearchResultView(viewModel: model)
+                            .onTapGesture {
+                                self.viewModel.onModelSelected(model)
+                        }
+                        
+                        Divider()
+                    }
+                }
+            }            
         }
+        .modifier(DismissingKeyboard())
     }
 }
 

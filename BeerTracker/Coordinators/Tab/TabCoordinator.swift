@@ -8,23 +8,26 @@
 
 import XCoordinator
 
-final class TabCoordinator: TabBarCoordinator<TabCoordinatorEvent> {
-    private let homeRouter: StrongRouter<HomeFlowCoordinatorEvent>
-    private let searchRouter: StrongRouter<SearchFlowCoordinatorEvent>
+final class TabCoordinator: TabBarCoordinator<TabCoordinatorRoute> {
+    private let homeRouter: StrongRouter<HomeFlowCoordinatorRoute>
+    private let searchRouter: StrongRouter<SearchFlowCoordinatorRoute>
     
-    convenience init(myRatingsProvider: MyRatingsProvider, searchProvider: SearchProvider) {
+    convenience init(myRatingsProvider: MyRatingsProvider,
+                     searchProvider: SearchProvider,
+                     beerProvider: BeerProvider) {
         let homeCoordinator = HomeFlowCoordinator(myRatingsProvider: myRatingsProvider)
-        homeCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .recents, tag: 0)
+        homeCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "My Ratings", image: nil, tag: 0)
 
-        let searchCoordinator = SearchFlowCoordinator(searchProvider: searchProvider)
-        searchCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        let searchCoordinator = SearchFlowCoordinator(searchProvider: searchProvider,
+                                                      beerProvider: beerProvider)
+        searchCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Search", image: nil, tag: 0)
 
         self.init(myRatingsRouter: homeCoordinator.strongRouter,
                   searchRouter: searchCoordinator.strongRouter)
     }
 
-    init(myRatingsRouter: StrongRouter<HomeFlowCoordinatorEvent>,
-         searchRouter: StrongRouter<SearchFlowCoordinatorEvent>) {
+    init(myRatingsRouter: StrongRouter<HomeFlowCoordinatorRoute>,
+         searchRouter: StrongRouter<SearchFlowCoordinatorRoute>) {
         self.homeRouter = myRatingsRouter
         self.searchRouter = searchRouter
 

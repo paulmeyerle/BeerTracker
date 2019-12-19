@@ -10,5 +10,5 @@ import XCoordinator
 
 enum MyRatingsViewEvent: Route {
     case started
-    case ratingSelected
+    case ratingIsPicked(id: String)
 }
