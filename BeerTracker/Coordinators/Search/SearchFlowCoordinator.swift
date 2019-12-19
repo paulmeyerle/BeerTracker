@@ -24,70 +24,72 @@ final class SearchFlowCoordinator: NavigationCoordinator<SearchFlowCoordinatorRo
     override func prepareTransition(for route: RouteType) -> NavigationTransition {
         switch route {
         case .search:
-            let child = SearchScreenCoordinator(rootViewController: rootViewController,
-                                                searchProvider: searchProvider,
-                                                parent: unownedRouter)
-            addChild(child)
-            return .trigger(.started, on: child)
+            let screen = SearchScreenCoordinator(parent: unownedRouter,
+                                                 searchProvider: searchProvider)
+            return .push(screen)
         case .beerDetails(let id):
-            let child = BeerScreenCoordinator(rootViewController: rootViewController,
-                                              beerProvider: beerProvider,
-                                              parent: unownedRouter)
-            addChild(child)
-            return .trigger(.started(id: id), on: child)
+            let screen = BeerScreenCoordinator(id: id,
+                                               parent: unownedRouter,
+                                               beerProvider: beerProvider)
+            return .push(screen)
         }
     }
     
-    final class SearchScreenCoordinator: NavigationCoordinator<SearchViewEvent> {
+    final class SearchScreenCoordinator: ScreenCoordinator {
+        typealias RouteType = SearchViewEvent
+        typealias ParentRoute = SearchFlowCoordinatorRoute
         
-        private let searchProvider: SearchProvider
-        private let parent: UnownedRouter<SearchFlowCoordinatorRoute>
+        let parent: UnownedRouter<SearchFlowCoordinatorRoute>
+        let searchProvider: SearchProvider
         
-        init(rootViewController: RootViewController,
-             searchProvider: SearchProvider,
-             parent: UnownedRouter<SearchFlowCoordinatorRoute>) {
+        lazy var viewController: UIViewController! = {
+            let viewModel = SearchViewModel(provider: searchProvider, router: unownedRouter)
+            let view = SearchView(viewModel: viewModel)
+            return UIHostingController(rootView: view)
+        }()
+        
+        init(parent: UnownedRouter<SearchFlowCoordinatorRoute>,
+             searchProvider: SearchProvider) {
+
+            self.parent = parent
             self.searchProvider = searchProvider
-            self.parent = parent
-            super.init(rootViewController: rootViewController)
         }
         
-        override func prepareTransition(for route: RouteType) -> NavigationTransition {
+        func mapToParent(_ route: SearchViewEvent) -> SearchFlowCoordinatorRoute? {
             switch route {
-            case .started:
-                let viewModel = SearchViewModel(provider: searchProvider,
-                                                router: unownedRouter)
-                let view = SearchView(viewModel: viewModel)
-                let controller = UIHostingController(rootView: view)
-                return .push(controller)
             case .beerIsPicked(let id):
-                return .trigger(.beerDetails(id: id), on: parent)
+                return .beerDetails(id: id)
             }
         }
     }
-    
-    final class BeerScreenCoordinator: NavigationCoordinator<BeerDetailViewEvent> {
+
+    final class BeerScreenCoordinator: ScreenCoordinator {
+        typealias ParentRoute = SearchFlowCoordinatorRoute
+        typealias RouteType = BeerDetailViewEvent
         
+        private let id: String
         private let beerProvider: BeerProvider
-        private let parent: UnownedRouter<SearchFlowCoordinatorRoute>
+        let parent: UnownedRouter<SearchFlowCoordinatorRoute>
         
-        init(rootViewController: RootViewController,
-             beerProvider: BeerProvider,
-             parent: UnownedRouter<SearchFlowCoordinatorRoute>) {
-            self.beerProvider = beerProvider
+        lazy var viewController: UIViewController! = {
+            let viewModel = BeerDetailViewModel(id: id,
+                                                provider: beerProvider,
+                                                router: unownedRouter)
+            let view = BeerDetailView(viewModel: viewModel)
+            return UIHostingController(rootView: view)
+        }()
+        
+        init(id: String,
+             parent: UnownedRouter<SearchFlowCoordinatorRoute>,
+             beerProvider: BeerProvider) {
+            
+            self.id = id
             self.parent = parent
-            super.init(rootViewController: rootViewController)
+            self.beerProvider = beerProvider
         }
         
-        override func prepareTransition(for route: RouteType) -> NavigationTransition {
-            switch route {
-            case .started(let id):
-                let viewModel = BeerDetailViewModel(id: id,
-                                                    provider: beerProvider,
-                                                    router: unownedRouter)
-                let view = BeerDetailView(viewModel: viewModel)
-                let controller = UIHostingController(rootView: view)
-                return .push(controller)
-            }
+        func mapToParent(_ route: BeerDetailViewEvent) -> SearchFlowCoordinatorRoute? {
+            return nil
         }
     }
 }

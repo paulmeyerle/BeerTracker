@@ -6,11 +6,10 @@ target 'BeerTracker' do
   use_frameworks!
 
   # Pods for BeerTracker
-  pod 'Apollo', '~> 0.19.0'
+  pod 'Apollo', '~> 0.20.0'
   pod 'SDWebImageSwiftUI'
   pod 'XCoordinator/Combine', '~> 2.0'
   pod 'Swinject'
-  pod 'RxFlow'
 
   target 'BeerTrackerTests' do
     inherit! :search_paths

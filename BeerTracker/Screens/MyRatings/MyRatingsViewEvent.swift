@@ -9,6 +9,7 @@
 import XCoordinator
 
 enum MyRatingsViewEvent: Route {
-    case started
     case ratingIsPicked(id: String)
 }
+
+extension MyRatingsViewEvent: Equatable {}

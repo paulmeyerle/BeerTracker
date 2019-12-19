@@ -9,6 +9,5 @@
 import XCoordinator
 
 enum SearchViewEvent: Route {
-    case started
     case beerIsPicked(id: String)
 }

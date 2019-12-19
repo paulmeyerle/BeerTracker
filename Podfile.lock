@@ -1,16 +1,7 @@
 PODS:
-  - Apollo (0.19.0):
-    - Apollo/Core (= 0.19.0)
-  - Apollo/Core (0.19.0)
-  - RxCocoa (5.0.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxFlow (2.6.0):
-    - RxCocoa (>= 5.0.0)
-    - RxSwift (>= 5.0.0)
-  - RxRelay (5.0.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - Apollo (0.20.0):
+    - Apollo/Core (= 0.20.0)
+  - Apollo/Core (0.20.0)
   - SDWebImage (5.4.0):
     - SDWebImage/Core (= 5.4.0)
   - SDWebImage/Core (5.4.0)
@@ -22,8 +13,7 @@ PODS:
   - XCoordinator/Core (2.0.6)
 
 DEPENDENCIES:
-  - Apollo (~> 0.19.0)
-  - RxFlow
+  - Apollo (~> 0.20.0)
   - SDWebImageSwiftUI
   - Swinject
   - XCoordinator/Combine (~> 2.0)
@@ -31,26 +21,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Apollo
-    - RxCocoa
-    - RxFlow
-    - RxRelay
-    - RxSwift
     - SDWebImage
     - SDWebImageSwiftUI
     - Swinject
     - XCoordinator
 
 SPEC CHECKSUMS:
-  Apollo: 4f0fea775a98bba34935764e49d27f2d3b1a5f21
-  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxFlow: f89ea40232813062f5e857fbe19a680a205a15ab
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  Apollo: 46b40c7023c1d49f2220a0364cdff8829674d9d3
   SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
   SDWebImageSwiftUI: 56541a8970e6dfad07c48bd03bc411611c644d15
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   XCoordinator: 67772bf463acec002a920ab5eb04f46835dcf123
 
-PODFILE CHECKSUM: b4e9290c2edcd3b83844d89b1e572ba186c6de15
+PODFILE CHECKSUM: b264395c825a1f765fcecfae3e2a927afaa28d2f
 
 COCOAPODS: 1.8.4

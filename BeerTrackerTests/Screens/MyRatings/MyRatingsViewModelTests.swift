@@ -14,26 +14,29 @@ class MyRatingsViewModelTests: XCTestCase {
 
     private var disposeBag: Set<AnyCancellable>!
     private var mockProvider: MockMyRatingsProvider!
+    private var mockRouter: MockRouter<MyRatingsViewEvent>!
 
     override func setUp() {
         disposeBag = Set<AnyCancellable>()
         mockProvider = MockMyRatingsProvider()
+        mockRouter = MockRouter()
     }
 
     override func tearDown() {
         disposeBag = nil
         mockProvider = nil
+        mockRouter = nil
     }
 
     // MARK: isLoading
     
     func test_isLoading_SHOULD_defaultToFalse() {
-        let sut = MyRatingsViewModel(provider: mockProvider)
+        let sut = MyRatingsViewModel(provider: mockProvider, router: mockRouter.unownedRouter)
         XCTAssertFalse(sut.isLoading)
     }
     
     func test_isLoading_SHOULD_toggleAfterFetch() {
-        let sut = MyRatingsViewModel(provider: mockProvider)
+        let sut = MyRatingsViewModel(provider: mockProvider, router: mockRouter.unownedRouter)
         
         var elements: [Bool] = []
         
@@ -49,12 +52,12 @@ class MyRatingsViewModelTests: XCTestCase {
     // MARK: cellViewModels
     
     func test_cellViewModels_SHOULD_defaultToEmpty() {
-        let sut = MyRatingsViewModel(provider: mockProvider)
+        let sut = MyRatingsViewModel(provider: mockProvider, router: mockRouter.unownedRouter)
         XCTAssertEqual(sut.cellViewModels.count, 0)
     }
     
     func test_cellViewModels_SHOULD_returnEmptyOnNetworkError() {
-        let sut = MyRatingsViewModel(provider: mockProvider)
+        let sut = MyRatingsViewModel(provider: mockProvider, router: mockRouter.unownedRouter)
 
         var elements: [[MyRatingsItemViewModel]] = []
         
@@ -70,7 +73,7 @@ class MyRatingsViewModelTests: XCTestCase {
     func test_cellViewModels_SHOULD_returnNonEmptyOnNetworkSuccess() {
         mockProvider.fetchMyRatingsResult = .success(MyRatingsQuery.Data.mockData)
         
-        let sut = MyRatingsViewModel(provider: mockProvider)
+        let sut = MyRatingsViewModel(provider: mockProvider, router: mockRouter.unownedRouter)
 
         var elements: [[MyRatingsItemViewModel]] = []
         
@@ -88,10 +91,20 @@ class MyRatingsViewModelTests: XCTestCase {
     // MARK: Service Provider
     
     func test_fetch_SHOULD_makeOneNetworkRequest() {
-        let sut = MyRatingsViewModel(provider: mockProvider)
+        let sut = MyRatingsViewModel(provider: mockProvider, router: mockRouter.unownedRouter)
         sut.fetch()
         
         XCTAssertEqual(mockProvider.fetchMyRatingsCallCount, 1)
+    }
+    
+    // MARK: onModelSelected
+    
+    func test_onModelSelected_SHOULD_triggerRouter_WITH_ratingIsPicked_event() {
+        let sut = MyRatingsViewModel(provider: mockProvider, router: mockRouter.unownedRouter)
+        let model = MyRatingsItemViewModel(rating: MyRatingsQuery.Data.mockData.myRatings!.first!)!
+        sut.onModelSelected(model)
+        XCTAssertEqual(mockRouter.contextTriggerCallCount, 1)
+        XCTAssertEqual(mockRouter.contextTriggerParamRoute, [.ratingIsPicked(id: "id")])
     }
 }
 

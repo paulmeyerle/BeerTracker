@@ -9,5 +9,5 @@
 import XCoordinator
 
 enum BeerDetailViewEvent: Route {
-    case started(id: String)
+
 }

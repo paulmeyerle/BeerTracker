@@ -29,7 +29,6 @@ final class SearchViewModel: ObservableObject {
         $searchQuery
             .debounce(for: .milliseconds(250), scheduler: globalDispatchQueue)
             .filter { $0.count >= 3 }
-            .print()
             .eraseToAnyPublisher()
     }()
     
@@ -54,7 +53,6 @@ final class SearchViewModel: ObservableObject {
                     let results = data.searchBeers else { return [] }
                 return results.compactMap { SearchResultViewModel(result: $0) }
             })
-            .print("resultViewModelsPublisher")
             .eraseToAnyPublisher()
     }()
     

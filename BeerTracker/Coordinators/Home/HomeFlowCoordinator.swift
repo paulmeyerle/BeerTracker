@@ -23,63 +23,59 @@ final class HomeFlowCoordinator: NavigationCoordinator<HomeFlowCoordinatorRoute>
     override func prepareTransition(for route: RouteType) -> NavigationTransition {
         switch route {
         case .myRatings:
-            let coordinator = MyRatingsScreenCoordinator(rootViewController: rootViewController,
-                                                         myRatingsProvider: myRatingsProvider,
-                                                         parent: unownedRouter)
-            addChild(coordinator)
-            return .trigger(.started, on: coordinator)
+            let screen = MyRatingsScreenCoordinator(parent: unownedRouter, myRatingsProvider: myRatingsProvider)
+            return .push(screen)
         case .ratingDetail(let id):
-            let child = RatingScreenCoordinator(rootViewController: rootViewController,
-                                              parent: unownedRouter)
-            addChild(child)
-            return .trigger(.started(id: id), on: child)
+            let screen = RatingScreenCoordinator(id: id, parent: unownedRouter)
+            return .push(screen)
         }
     }
     
-    final class MyRatingsScreenCoordinator: NavigationCoordinator<MyRatingsViewEvent> {
+    final class MyRatingsScreenCoordinator: ScreenCoordinator {
+        typealias ParentRoute = HomeFlowCoordinatorRoute
+        typealias RouteType = MyRatingsViewEvent
         
+        let parent: UnownedRouter<HomeFlowCoordinatorRoute>
         private let myRatingsProvider: MyRatingsProvider
-        private let parent: UnownedRouter<HomeFlowCoordinatorRoute>
         
-        init(rootViewController: RootViewController,
-             myRatingsProvider: MyRatingsProvider,
-             parent: UnownedRouter<HomeFlowCoordinatorRoute>) {
-            self.myRatingsProvider = myRatingsProvider
+        lazy var viewController: UIViewController! = {
+            let viewModel = MyRatingsViewModel(provider: myRatingsProvider, router: unownedRouter)
+            let view = MyRatingsView(viewModel: viewModel)
+            return UIHostingController(rootView: view)
+        }()
+        
+        init(parent: UnownedRouter<HomeFlowCoordinatorRoute>, myRatingsProvider: MyRatingsProvider) {
             self.parent = parent
-            super.init(rootViewController: rootViewController)
+            self.myRatingsProvider = myRatingsProvider
         }
         
-        override func prepareTransition(for route: RouteType) -> NavigationTransition {
+        func mapToParent(_ route: MyRatingsViewEvent) -> HomeFlowCoordinatorRoute? {
             switch route {
-            case .started:
-                let viewModel = MyRatingsViewModel(provider: myRatingsProvider,
-                                                   router: unownedRouter)
-                let view = MyRatingsView(viewModel: viewModel)
-                let controller = UIHostingController(rootView: view)
-                return .push(controller)
-            case .ratingIsPicked(let id):
-                return .trigger(.ratingDetail(id: id), on: parent)
-            }
+              case .ratingIsPicked(let id):
+                  return .ratingDetail(id: id)
+              }
         }
     }
     
-    final class RatingScreenCoordinator: NavigationCoordinator<RatingDetailViewEvent> {
-        private let parent: UnownedRouter<HomeFlowCoordinatorRoute>
+    final class RatingScreenCoordinator: ScreenCoordinator {
+        typealias ParentRoute = HomeFlowCoordinatorRoute
+        typealias RouteType = RatingDetailViewEvent
         
-        init(rootViewController: RootViewController,
-            parent: UnownedRouter<HomeFlowCoordinatorRoute>) {
+        private let id: String
+        let parent: UnownedRouter<HomeFlowCoordinatorRoute>
+        
+        lazy var viewController: UIViewController! = {
+            let view = RatingDetailView()
+            return UIHostingController(rootView: view)
+        }()
+        
+        init(id: String, parent: UnownedRouter<HomeFlowCoordinatorRoute>) {
+            self.id = id
             self.parent = parent
-            super.init(rootViewController: rootViewController)
         }
         
-        override func prepareTransition(for route: RouteType) -> NavigationTransition {
-            switch route {
-            case .started(let id):
-                print("id: \(id)")
-                let view = RatingDetailView()
-                let controller = UIHostingController(rootView: view)
-                return .push(controller)
-            }
+        func mapToParent(_ route: RatingDetailViewEvent) -> HomeFlowCoordinatorRoute? {
+            return nil
         }
     }
 }

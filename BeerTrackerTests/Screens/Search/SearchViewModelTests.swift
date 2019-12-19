@@ -14,21 +14,25 @@ class SearchViewModelTests: XCTestCase {
     
     private var disposeBag: Set<AnyCancellable>!
     private var mockSearchProvider: MockSearchProvider!
+    private var mockRouter: MockRouter<SearchViewEvent>!
     
     override func setUp() {
         disposeBag = Set<AnyCancellable>()
         mockSearchProvider = MockSearchProvider()
+        mockRouter = MockRouter()
     }
     
     override func tearDown() {
         disposeBag = nil
         mockSearchProvider = nil
+        mockRouter = nil
     }
     
     // MARK: resultViewModels
     
     func test_resultViewModels_SHOULD_defaultToEmpty() {
         let sut = SearchViewModel(provider: mockSearchProvider,
+                                  router: mockRouter.unownedRouter,
                                   mainDispatchQueue: DispatchQueue.main,
                                   globalDispatchQueue: DispatchQueue.main)
         
@@ -39,6 +43,7 @@ class SearchViewModelTests: XCTestCase {
         let expectation = self.expectation(description: #function)
         
         let sut = SearchViewModel(provider: mockSearchProvider,
+                                  router: mockRouter.unownedRouter,
                                   mainDispatchQueue: DispatchQueue.main,
                                   globalDispatchQueue: DispatchQueue.main)
         
@@ -68,6 +73,7 @@ class SearchViewModelTests: XCTestCase {
         let expectation = self.expectation(description: #function)
         
         let sut = SearchViewModel(provider: mockSearchProvider,
+                                  router: mockRouter.unownedRouter,
                                   mainDispatchQueue: DispatchQueue.main,
                                   globalDispatchQueue: DispatchQueue.main)
         
@@ -101,6 +107,7 @@ class SearchViewModelTests: XCTestCase {
         let expectation = self.expectation(description: #function)
         
         let sut = SearchViewModel(provider: mockSearchProvider,
+                                  router: mockRouter.unownedRouter,
                                   mainDispatchQueue: DispatchQueue.main,
                                   globalDispatchQueue: DispatchQueue.main)
         
@@ -127,6 +134,7 @@ class SearchViewModelTests: XCTestCase {
         let expectation = self.expectation(description: #function)
         
         let sut = SearchViewModel(provider: mockSearchProvider,
+                                  router: mockRouter.unownedRouter,
                                   mainDispatchQueue: DispatchQueue.main,
                                   globalDispatchQueue: DispatchQueue.main)
         

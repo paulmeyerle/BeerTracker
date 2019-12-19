@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		54082CB523ABAE060043CE3E /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CB423ABAE060043CE3E /* CircleImage.swift */; };
+		54082CB723ABC3E70043CE3E /* MockRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CB623ABC3E70043CE3E /* MockRouter.swift */; };
+		54082CB923ABC6240043CE3E /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CB823ABC6240043CE3E /* MockViewController.swift */; };
+		54082CBB23ABC6390043CE3E /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CBA23ABC6390043CE3E /* MockNavigationController.swift */; };
+		54082CBD23ABF0490043CE3E /* ScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CBC23ABF0490043CE3E /* ScreenCoordinator.swift */; };
 		54A0BD2023A7CDE8004F963B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD1F23A7CDE8004F963B /* AppCoordinator.swift */; };
 		54A0BD2523A85471004F963B /* TabCoordinatorRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2423A85471004F963B /* TabCoordinatorRoute.swift */; };
 		54A0BD2723A85488004F963B /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2623A85488004F963B /* TabCoordinator.swift */; };
@@ -82,6 +86,10 @@
 		3CC690BABE57B0D32BB92BC1 /* Pods_BeerTracker_BeerTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerTracker_BeerTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D2A0B76279402A2F052D76B /* Pods-BeerTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerTracker.release.xcconfig"; path = "Target Support Files/Pods-BeerTracker/Pods-BeerTracker.release.xcconfig"; sourceTree = "<group>"; };
 		54082CB423ABAE060043CE3E /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		54082CB623ABC3E70043CE3E /* MockRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRouter.swift; sourceTree = "<group>"; };
+		54082CB823ABC6240043CE3E /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		54082CBA23ABC6390043CE3E /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
+		54082CBC23ABF0490043CE3E /* ScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCoordinator.swift; sourceTree = "<group>"; };
 		54A0BD1F23A7CDE8004F963B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		54A0BD2423A85471004F963B /* TabCoordinatorRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorRoute.swift; sourceTree = "<group>"; };
 		54A0BD2623A85488004F963B /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
@@ -178,6 +186,7 @@
 		54A0BD1E23A7CDD7004F963B /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				54082CBC23ABF0490043CE3E /* ScreenCoordinator.swift */,
 				54A0BD3023A85518004F963B /* App */,
 				54A0BD2123A81578004F963B /* Home */,
 				54A0BD2323A85462004F963B /* Search */,
@@ -355,6 +364,9 @@
 			children = (
 				54C466452380363D001D5CE9 /* MockSearchProvider.swift */,
 				54F118552381AF2500AA04B9 /* MockMyRatingsProvider.swift */,
+				54082CB623ABC3E70043CE3E /* MockRouter.swift */,
+				54082CB823ABC6240043CE3E /* MockViewController.swift */,
+				54082CBA23ABC6390043CE3E /* MockNavigationController.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -771,6 +783,7 @@
 				54A0BD2523A85471004F963B /* TabCoordinatorRoute.swift in Sources */,
 				54082CB523ABAE060043CE3E /* CircleImage.swift in Sources */,
 				54AE835B2378ACF800AD704C /* MyRatingsItemViewModel.swift in Sources */,
+				54082CBD23ABF0490043CE3E /* ScreenCoordinator.swift in Sources */,
 				54AE8358237899B600AD704C /* MyRatingsViewModel.swift in Sources */,
 				54AF3C002377325900357797 /* SearchView.swift in Sources */,
 				54AE836F237C317000AD704C /* SearchProvider.swift in Sources */,
@@ -801,9 +814,12 @@
 			files = (
 				54F118522381A80E00AA04B9 /* MyRatingsItemViewModelTests.swift in Sources */,
 				54C466462380363D001D5CE9 /* MockSearchProvider.swift in Sources */,
+				54082CBB23ABC6390043CE3E /* MockNavigationController.swift in Sources */,
 				54F118562381AF2500AA04B9 /* MockMyRatingsProvider.swift in Sources */,
 				54C4664323803523001D5CE9 /* SearchViewModelTests.swift in Sources */,
+				54082CB923ABC6240043CE3E /* MockViewController.swift in Sources */,
 				54F1184E2381A36000AA04B9 /* SearchResultViewModelTests.swift in Sources */,
+				54082CB723ABC3E70043CE3E /* MockRouter.swift in Sources */,
 				54F118542381AB8F00AA04B9 /* MyRatingsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

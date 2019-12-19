@@ -9,5 +9,5 @@
 import XCoordinator
 
 enum RatingDetailViewEvent: Route {
-    case started(id: String)
+
 }
