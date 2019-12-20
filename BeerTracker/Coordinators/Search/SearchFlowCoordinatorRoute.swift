@@ -12,3 +12,5 @@ enum SearchFlowCoordinatorRoute: Route {
     case search
     case beerDetails(id: String)
 }
+
+extension SearchFlowCoordinatorRoute: Equatable {}

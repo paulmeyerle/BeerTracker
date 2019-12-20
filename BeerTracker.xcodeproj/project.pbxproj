@@ -12,6 +12,12 @@
 		54082CB923ABC6240043CE3E /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CB823ABC6240043CE3E /* MockViewController.swift */; };
 		54082CBB23ABC6390043CE3E /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CBA23ABC6390043CE3E /* MockNavigationController.swift */; };
 		54082CBD23ABF0490043CE3E /* ScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CBC23ABF0490043CE3E /* ScreenCoordinator.swift */; };
+		54082CC023AC1A7C0043CE3E /* HomeFlowCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CBF23AC1A7C0043CE3E /* HomeFlowCoordinatorTests.swift */; };
+		54082CC223AD01DC0043CE3E /* ScreenCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CC123AD01DC0043CE3E /* ScreenCoordinatorTests.swift */; };
+		54082CC423AD05050043CE3E /* SearchFlowCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CC323AD05050043CE3E /* SearchFlowCoordinatorTests.swift */; };
+		54082CC623AD051A0043CE3E /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CC523AD051A0043CE3E /* AppCoordinatorTests.swift */; };
+		54082CC823AD052B0043CE3E /* TabCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CC723AD052B0043CE3E /* TabCoordinatorTests.swift */; };
+		54082CCE23AD893D0043CE3E /* MockBeerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54082CCD23AD893D0043CE3E /* MockBeerProvider.swift */; };
 		54A0BD2023A7CDE8004F963B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD1F23A7CDE8004F963B /* AppCoordinator.swift */; };
 		54A0BD2523A85471004F963B /* TabCoordinatorRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2423A85471004F963B /* TabCoordinatorRoute.swift */; };
 		54A0BD2723A85488004F963B /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BD2623A85488004F963B /* TabCoordinator.swift */; };
@@ -90,6 +96,12 @@
 		54082CB823ABC6240043CE3E /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
 		54082CBA23ABC6390043CE3E /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
 		54082CBC23ABF0490043CE3E /* ScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCoordinator.swift; sourceTree = "<group>"; };
+		54082CBF23AC1A7C0043CE3E /* HomeFlowCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoordinatorTests.swift; sourceTree = "<group>"; };
+		54082CC123AD01DC0043CE3E /* ScreenCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCoordinatorTests.swift; sourceTree = "<group>"; };
+		54082CC323AD05050043CE3E /* SearchFlowCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowCoordinatorTests.swift; sourceTree = "<group>"; };
+		54082CC523AD051A0043CE3E /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
+		54082CC723AD052B0043CE3E /* TabCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorTests.swift; sourceTree = "<group>"; };
+		54082CCD23AD893D0043CE3E /* MockBeerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBeerProvider.swift; sourceTree = "<group>"; };
 		54A0BD1F23A7CDE8004F963B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		54A0BD2423A85471004F963B /* TabCoordinatorRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorRoute.swift; sourceTree = "<group>"; };
 		54A0BD2623A85488004F963B /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
@@ -183,6 +195,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54082CBE23AC1A600043CE3E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				54082CC123AD01DC0043CE3E /* ScreenCoordinatorTests.swift */,
+				54082CC923AD05580043CE3E /* App */,
+				54082CCA23AD05630043CE3E /* Home */,
+				54082CCB23AD056A0043CE3E /* Search */,
+				54082CCC23AD057C0043CE3E /* Tab */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		54082CC923AD05580043CE3E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				54082CC523AD051A0043CE3E /* AppCoordinatorTests.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		54082CCA23AD05630043CE3E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				54082CBF23AC1A7C0043CE3E /* HomeFlowCoordinatorTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		54082CCB23AD056A0043CE3E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				54082CC323AD05050043CE3E /* SearchFlowCoordinatorTests.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		54082CCC23AD057C0043CE3E /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				54082CC723AD052B0043CE3E /* TabCoordinatorTests.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
 		54A0BD1E23A7CDD7004F963B /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,8 +254,8 @@
 		54A0BD2123A81578004F963B /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				54A0BD2823A854B4004F963B /* HomeFlowCoordinatorRoute.swift */,
 				54A0BD2A23A854C5004F963B /* HomeFlowCoordinator.swift */,
+				54A0BD2823A854B4004F963B /* HomeFlowCoordinatorRoute.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -216,8 +272,8 @@
 		54A0BD2323A85462004F963B /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				54A0BD2C23A854E3004F963B /* SearchFlowCoordinatorRoute.swift */,
 				54A0BD2E23A854FA004F963B /* SearchFlowCoordinator.swift */,
+				54A0BD2C23A854E3004F963B /* SearchFlowCoordinatorRoute.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -362,11 +418,12 @@
 		54C466442380362F001D5CE9 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				54C466452380363D001D5CE9 /* MockSearchProvider.swift */,
 				54F118552381AF2500AA04B9 /* MockMyRatingsProvider.swift */,
-				54082CB623ABC3E70043CE3E /* MockRouter.swift */,
-				54082CB823ABC6240043CE3E /* MockViewController.swift */,
 				54082CBA23ABC6390043CE3E /* MockNavigationController.swift */,
+				54082CB623ABC3E70043CE3E /* MockRouter.swift */,
+				54C466452380363D001D5CE9 /* MockSearchProvider.swift */,
+				54082CB823ABC6240043CE3E /* MockViewController.swift */,
+				54082CCD23AD893D0043CE3E /* MockBeerProvider.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -469,9 +526,10 @@
 		54F6AEF823772AB400604574 /* BeerTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				54F6AEFB23772AB400604574 /* Info.plist */,
+				54082CBE23AC1A600043CE3E /* Coordinators */,
 				54C466442380362F001D5CE9 /* Mocks */,
 				54C46640238034F3001D5CE9 /* Screens */,
-				54F6AEFB23772AB400604574 /* Info.plist */,
 			);
 			path = BeerTrackerTests;
 			sourceTree = "<group>";
@@ -814,13 +872,19 @@
 			files = (
 				54F118522381A80E00AA04B9 /* MyRatingsItemViewModelTests.swift in Sources */,
 				54C466462380363D001D5CE9 /* MockSearchProvider.swift in Sources */,
+				54082CC823AD052B0043CE3E /* TabCoordinatorTests.swift in Sources */,
 				54082CBB23ABC6390043CE3E /* MockNavigationController.swift in Sources */,
 				54F118562381AF2500AA04B9 /* MockMyRatingsProvider.swift in Sources */,
+				54082CC623AD051A0043CE3E /* AppCoordinatorTests.swift in Sources */,
 				54C4664323803523001D5CE9 /* SearchViewModelTests.swift in Sources */,
+				54082CC023AC1A7C0043CE3E /* HomeFlowCoordinatorTests.swift in Sources */,
 				54082CB923ABC6240043CE3E /* MockViewController.swift in Sources */,
+				54082CCE23AD893D0043CE3E /* MockBeerProvider.swift in Sources */,
 				54F1184E2381A36000AA04B9 /* SearchResultViewModelTests.swift in Sources */,
+				54082CC423AD05050043CE3E /* SearchFlowCoordinatorTests.swift in Sources */,
 				54082CB723ABC3E70043CE3E /* MockRouter.swift in Sources */,
 				54F118542381AB8F00AA04B9 /* MyRatingsViewModelTests.swift in Sources */,
+				54082CC223AD01DC0043CE3E /* ScreenCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

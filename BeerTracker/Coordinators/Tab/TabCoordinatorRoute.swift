@@ -12,3 +12,5 @@ enum TabCoordinatorRoute: Route {
     case myRatings
     case search
 }
+
+extension TabCoordinatorRoute: Equatable {}

@@ -22,7 +22,7 @@ extension ScreenCoordinator {
     }
 }
 
-extension ScreenCoordinator where Self: AnyObject {
+extension ScreenCoordinator where Self: Presentable & AnyObject  {
     var weakRouter: WeakRouter<RouteType> {
         return WeakRouter(self) { $0.strongRouter }
     }

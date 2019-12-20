@@ -11,3 +11,5 @@ import XCoordinator
 enum RatingDetailViewEvent: Route {
 
 }
+
+extension RatingDetailViewEvent: Equatable {}

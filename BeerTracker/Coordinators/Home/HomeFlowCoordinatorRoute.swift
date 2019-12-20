@@ -12,3 +12,5 @@ enum HomeFlowCoordinatorRoute: Route {
     case myRatings
     case ratingDetail(id: String)
 }
+
+extension HomeFlowCoordinatorRoute: Equatable {}

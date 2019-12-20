@@ -11,3 +11,5 @@ import XCoordinator
 enum AppCoordinatorRoute: Route {
     case home
 }
+
+extension AppCoordinatorRoute: Equatable {}
