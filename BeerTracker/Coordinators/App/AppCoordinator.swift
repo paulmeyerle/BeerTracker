@@ -10,8 +10,9 @@ import XCoordinator
 
 final class AppCoordinator: ViewCoordinator<AppCoordinatorRoute> {
     
-    // TODO: inject
-    private let provider = ApolloServiceProvider()
+    private let myRatingsProvider: MyRatingsProvider
+    private let searchProvider: SearchProvider
+    private let beerProvider: BeerProvider
     
     private let presenter: UIViewController = {
         let viewController = UIViewController()
@@ -19,7 +20,12 @@ final class AppCoordinator: ViewCoordinator<AppCoordinatorRoute> {
         return viewController
     }()
     
-    init() {
+    init(myRatingsProvider: MyRatingsProvider,
+         searchProvider: SearchProvider,
+         beerProvider: BeerProvider) {
+        self.myRatingsProvider = myRatingsProvider
+        self.searchProvider = searchProvider
+        self.beerProvider = beerProvider
         super.init(rootViewController: presenter, initialRoute: .home)
         
         // Disable separators on all tableviews
@@ -29,7 +35,7 @@ final class AppCoordinator: ViewCoordinator<AppCoordinatorRoute> {
     override func prepareTransition(for route: RouteType) -> TransitionType {
         switch route {
         case .home:
-            let home = TabCoordinator(myRatingsProvider: provider, searchProvider: provider, beerProvider: provider)
+            let home = TabCoordinator(myRatingsProvider: myRatingsProvider, searchProvider: searchProvider, beerProvider: beerProvider)
             return .present(home)
         }
     }

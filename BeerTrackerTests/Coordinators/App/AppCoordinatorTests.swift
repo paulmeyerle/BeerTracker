@@ -7,27 +7,53 @@
 //
 
 import XCTest
+@testable import BeerTracker
 
 class AppCoordinatorTests: XCTestCase {
+    
+    private var mockMyRatingsProvider: MockMyRatingsProvider!
+    private var mockSearchProvider: MockSearchProvider!
+    private var mockBeerProvider: MockBeerProvider!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        mockMyRatingsProvider = MockMyRatingsProvider()
+        mockSearchProvider = MockSearchProvider()
+        mockBeerProvider = MockBeerProvider()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        mockMyRatingsProvider = nil
+        mockSearchProvider = nil
+        mockBeerProvider = nil
+    }
+    
+    func test_init_SHOULD_defaultToTabCoordinator() {
+        let sut = AppCoordinator(myRatingsProvider: mockMyRatingsProvider,
+                                 searchProvider: mockSearchProvider,
+                                 beerProvider: mockBeerProvider)
+        XCTAssertEqual(sut.children.count, 1)
+        let child = try! XCTUnwrap(sut.children.first)
+        XCTAssertTrue(child is TabCoordinator)
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_prepareTransition_SHOULD_presentTabCoordinator_WITH_home_event() {
+        let sut = AppCoordinator(myRatingsProvider: mockMyRatingsProvider,
+                                 searchProvider: mockSearchProvider,
+                                 beerProvider: mockBeerProvider)
+        
+        let result = sut.prepareTransition(for: .home)
+        XCTAssertEqual(result.presentables.count, 1)
+        let presentable = try! XCTUnwrap(result.presentables.first)
+        XCTAssertTrue(presentable is TabCoordinator)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_prepareTransition_SHOULD_addChild_WITH_home_event() {
+        let sut = AppCoordinator(myRatingsProvider: mockMyRatingsProvider,
+                                 searchProvider: mockSearchProvider,
+                                 beerProvider: mockBeerProvider)
+        sut.trigger(.home)
+        XCTAssertEqual(sut.children.count, 2)
+        let child = try! XCTUnwrap(sut.children.last)
+        XCTAssertTrue(child is TabCoordinator)
     }
-
 }
